@@ -1,0 +1,865 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>ATLAKNOTS EVENTIVE</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="img/logo/eventive logo.png" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon Font Stylesheet -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+
+    <style>
+      .blog-img-wrapper {
+        height: 280px;
+        overflow: hidden;
+        border-radius: 8px 8px 0 0;
+      }
+      .blog-img-wrapper img {
+        width: 100%;
+        height: 100% !important;
+        object-fit: cover;
+        transition: all 0.6s ease;
+      }
+      .blog-item:hover .blog-img-wrapper img {
+        transform: scale(1.08);
+      }
+      .blog-item {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInUp 0.8s forwards;
+      }
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .row.g-5 .col-xl-6:nth-child(1) .blog-item {
+        animation-delay: 0.1s;
+      }
+      .row.g-5 .col-xl-6:nth-child(2) .blog-item {
+        animation-delay: 0.2s;
+      }
+      .row.g-5 .col-xl-6:nth-child(3) .blog-item {
+        animation-delay: 0.3s;
+      }
+      .row.g-5 .col-xl-6:nth-child(4) .blog-item {
+        animation-delay: 0.4s;
+      }
+      .row.g-5 .col-xl-6:nth-child(5) .blog-item {
+        animation-delay: 0.5s;
+      }
+      .row.g-5 .col-xl-6:nth-child(6) .blog-item {
+        animation-delay: 0.6s;
+      }
+      .row.g-5 .col-xl-6:nth-child(7) .blog-item {
+        animation-delay: 0.7s;
+      }
+      .row.g-5 .col-xl-6:nth-child(8) .blog-item {
+        animation-delay: 0.8s;
+      }
+
+      .active-filter {
+        background-color: #007bff !important;
+        color: white !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Topbar & Navbar (same as you provided) -->
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-secondary ps-5 pe-0 d-none d-lg-block">
+      <div class="row gx-0">
+        <div class="col-md-6 text-center text-lg-start mb-2 mb-lg-0">
+          <div class="d-inline-flex align-items-center">
+            <a class="text-body py-2 pe-3 border-end" href=""
+              ><small>FAQs</small></a
+            >
+            <a class="text-body py-2 px-3 border-end" href=""
+              ><small>Support</small></a
+            >
+            <a class="text-body py-2 px-3 border-end" href=""
+              ><small>Privacy</small></a
+            >
+            <a class="text-body py-2 px-3 border-end" href=""
+              ><small>Policy</small></a
+            >
+            <a class="text-body py-2 ps-3" href=""><small>Career</small></a>
+          </div>
+        </div>
+        <div class="col-md-6 text-center text-lg-end">
+          <div
+            class="position-relative d-inline-flex align-items-center bg-primary text-white top-shape px-5"
+          >
+            <div class="me-3 pe-3 border-end py-2">
+              <p class="m-0">
+                <i class="fa fa-envelope-open me-2"></i>mailus@akeventive.com
+              </p>
+            </div>
+            <div class="py-2">
+              <p class="m-0">
+                <i class="fa fa-phone-alt me-2"></i>+91-9911556070,
+                +91-7489476616
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Topbar End -->
+
+    <!-- Navbar Start -->
+    <nav
+      class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-3 py-lg-0"
+    >
+      <a href="index.html" class="navbar-brand p-0">
+        <h1 class="m-0 text-uppercase text-primary">
+          <img
+            src="img/logo/eventive logo.png"
+            alt="Logo"
+            height="100px"
+            width="100px"
+          />
+        </h1>
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarCollapse"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto py-0 me-n3">
+          <a href="index.html" class="nav-item nav-link">Home</a>
+          <a href="about.html" class="nav-item nav-link">About</a>
+          <a href="service.html" class="nav-item nav-link">Service</a>
+          <div class="nav-item dropdown">
+            <a
+              href="#"
+              class="nav-link dropdown-toggle active"
+              data-bs-toggle="dropdown"
+              >Pages</a
+            >
+            <div class="dropdown-menu m-0">
+              <a href="blog.html" class="dropdown-item active">Blog Grid</a>
+              <a href="detail.html" class="dropdown-item">Blog Detail</a>
+              <a href="feature.html" class="dropdown-item">Features</a>
+              <a href="quote.html" class="dropdown-item">Quote Form</a>
+            </div>
+          </div>
+          <a href="contact.html" class="nav-item nav-link">Contact</a>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Page Header Start -->
+    <div class="container-fluid bg-dark p-5">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h1 class="display-4 text-white">Blog Grid</h1>
+          <a href="index.html">Home</a>
+          <i class="far fa-square text-primary px-2"></i>
+          <a href="blog.html">Blog Grid</a>
+        </div>
+      </div>
+    </div>
+    <!-- Page Header End -->
+
+    <!-- Blog Start -->
+    <div class="container-fluid py-6 px-5">
+      <div class="row g-5">
+        <!-- Blog list Start -->
+        <div class="col-lg-8">
+          <div class="row g-5" id="blogContainer">
+            <!-- Blog 1 -->
+            <div
+              class="col-xl-6 col-lg-12 col-md-6 blog-item"
+              data-category="Wedding"
+              data-title="Magical Destination Wedding"
+            >
+              <div class="h-100">
+                <div class="position-relative overflow-hidden blog-img-wrapper">
+                  <img
+                    class="img-fluid"
+                    src="img/logo/janjatoigoravdiwas2.jpg.jpeg"
+                    alt="Grand Wedding"
+                  />
+                </div>
+                <div class="bg-secondary d-flex">
+                  <div
+                    class="flex-shrink-0 d-flex flex-column justify-content-center text-center bg-primary text-white px-4"
+                  >
+                    <span>15</span>
+                    <h5 class="text-uppercase m-0">Mar</h5>
+                    <span>2025</span>
+                  </div>
+                  <div
+                    class="d-flex flex-column justify-content-center py-3 px-4"
+                  >
+                    <div class="d-flex mb-2">
+                      <small class="text-uppercase me-3"
+                        ><i class="bi bi-person me-2"></i>Admin</small
+                      >
+                      <small class="text-uppercase me-3"
+                        ><i class="bi bi-bookmarks me-2"></i>Wedding</small
+                      >
+                    </div>
+                    <a class="h4" href="detail.html"
+                      >Magical Destination Wedding at Lake View Resort</a
+                    >
+                    <p class="mt-2">
+                      A grand wedding celebration with floral mandap, live
+                      music, cultural performances and 500+ guests.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Blog 2 -->
+            <div
+              class="col-xl-6 col-lg-12 col-md-6 blog-item"
+              data-category="Corporate"
+              data-title="Annual Business Summit"
+            >
+              <div class="h-100">
+                <div class="position-relative overflow-hidden blog-img-wrapper">
+                  <img
+                    class="img-fluid"
+                    src="img/logo/andhata.jpeg"
+                    alt="Corporate Event"
+                  />
+                </div>
+                <div class="bg-secondary d-flex">
+                  <div
+                    class="flex-shrink-0 d-flex flex-column justify-content-center text-center bg-primary text-white px-4"
+                  >
+                    <span>22</span>
+                    <h5 class="text-uppercase m-0">Feb</h5>
+                    <span>2025</span>
+                  </div>
+                  <div
+                    class="d-flex flex-column justify-content-center py-3 px-4"
+                  >
+                    <div class="d-flex mb-2">
+                      <small class="text-uppercase me-3"
+                        ><i class="bi bi-person me-2"></i>Admin</small
+                      >
+                      <small class="text-uppercase me-3"
+                        ><i class="bi bi-bookmarks me-2"></i>Corporate</small
+                      >
+                    </div>
+                    <a class="h4" href="detail.html"
+                      >Annual Business Summit for 300 Executives</a
+                    >
+                    <p class="mt-2">
+                      High-profile corporate event featuring keynote speakers,
+                      product launches and networking sessions.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add remaining blogs similarly with data-category -->
+            <!-- Blog 3 -->
+            <div
+              class="col-xl-6 col-lg-12 col-md-6 blog-item"
+              data-category="Rural"
+              data-title="Village Haat Activation"
+            >
+              <div class="h-100">
+                <div class="position-relative overflow-hidden blog-img-wrapper">
+                  <img
+                    class="img-fluid"
+                    src="img/logo/abandkar.jpg.jpeg"
+                    alt="Rural Marketing"
+                  />
+                </div>
+                <div class="bg-secondary d-flex">
+                  <div
+                    class="flex-shrink-0 d-flex flex-column justify-content-center text-center bg-primary text-white px-4"
+                  >
+                    <span>10</span>
+                    <h5 class="text-uppercase m-0">Jan</h5>
+                    <span>2025</span>
+                  </div>
+                  <div
+                    class="d-flex flex-column justify-content-center py-3 px-4"
+                  >
+                    <div class="d-flex mb-2">
+                      <small class="text-uppercase me-3"
+                        ><i class="bi bi-person me-2"></i>Admin</small
+                      >
+                      <small class="text-uppercase me-3"
+                        ><i class="bi bi-bookmarks me-2"></i>Rural</small
+                      >
+                    </div>
+                    <a class="h4" href="detail.html"
+                      >Village Haat Activation – Rural Marketing Campaign</a
+                    >
+                    <p class="mt-2">
+                      Engaging rural audience through folk performances, product
+                      demos and community games.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Blog 4 -->
+            <div
+              class="col-xl-6 col-lg-12 col-md-6 blog-item"
+              data-category="Experiential"
+              data-title="Immersive Brand Experience"
+            >
+              <div class="h-100">
+                <div class="position-relative overflow-hidden blog-img-wrapper">
+                  <img
+                    class="img-fluid"
+                    src="img/logo/gangadharshan.jpg.jpeg"
+                    alt="Experiential Marketing"
+                  />
+                </div>
+                <div class="bg-secondary d-flex">
+                  <div
+                    class="flex-shrink-0 d-flex flex-column justify-content-center text-center bg-primary text-white px-4"
+                  >
+                    <span>05</span>
+                    <h5 class="text-uppercase m-0">Dec</h5>
+                    <span>2024</span>
+                  </div>
+                  <div
+                    class="d-flex flex-column justify-content-center py-3 px-4"
+                  >
+                    <div class="d-flex mb-2">
+                      <small class="text-uppercase me-3"
+                        ><i class="bi bi-person me-2"></i>Admin</small
+                      >
+                      <small class="text-uppercase me-3"
+                        ><i class="bi bi-bookmarks me-2"></i>Experiential</small
+                      >
+                    </div>
+                    <a class="h4" href="detail.html"
+                      >Immersive Brand Experience at Trade Fair</a
+                    >
+                    <p class="mt-2">
+                      Interactive installations, VR zones and live storytelling
+                      for maximum brand engagement.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Blog 5 -->
+            <div
+              class="col-xl-6 col-lg-12 col-md-6 blog-item"
+              data-category="Exhibition"
+              data-title="Madhya Pradesh Expo"
+            >
+              <div class="h-100">
+                <div class="position-relative overflow-hidden blog-img-wrapper">
+                  <img
+                    class="img-fluid"
+                    src="img/logo/image3.jpg.jpeg"
+                    alt="Exhibition"
+                  />
+                </div>
+                <div class="bg-secondary d-flex">
+                  <div
+                    class="flex-shrink-0 d-flex flex-column justify-content-center text-center bg-primary text-white px-4"
+                  >
+                    <span>28</span>
+                    <h5 class="text-uppercase m-0">Nov</h5>
+                    <span>2024</span>
+                  </div>
+                  <div
+                    class="d-flex flex-column justify-content-center py-3 px-4"
+                  >
+                    <div class="d-flex mb-2">
+                      <small class="text-uppercase me-3"
+                        ><i class="bi bi-person me-2"></i>Admin</small
+                      >
+                      <small class="text-uppercase me-3"
+                        ><i class="bi bi-bookmarks me-2"></i>Exhibition</small
+                      >
+                    </div>
+                    <a class="h4" href="detail.html"
+                      >Madhya Pradesh Expo 2024 – Stall Design & Management</a
+                    >
+                    <p class="mt-2">
+                      Complete exhibition services including custom booth
+                      fabrication and visitor engagement.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Blog 6 -->
+            <div
+              class="col-xl-6 col-lg-12 col-md-6 blog-item"
+              data-category="Film"
+              data-title="Corporate Documentary"
+            >
+              <div class="h-100">
+                <div class="position-relative overflow-hidden blog-img-wrapper">
+                  <img
+                    class="img-fluid"
+                    src="img/logo/image5.jpg.jpeg"
+                    alt="Film Production"
+                  />
+                </div>
+                <div class="bg-secondary d-flex">
+                  <div
+                    class="flex-shrink-0 d-flex flex-column justify-content-center text-center bg-primary text-white px-4"
+                  >
+                    <span>18</span>
+                    <h5 class="text-uppercase m-0">Oct</h5>
+                    <span>2024</span>
+                  </div>
+                  <div
+                    class="d-flex flex-column justify-content-center py-3 px-4"
+                  >
+                    <div class="d-flex mb-2">
+                      <small class="text-uppercase me-3"
+                        ><i class="bi bi-person me-2"></i>Admin</small
+                      >
+                      <small class="text-uppercase me-3"
+                        ><i class="bi bi-bookmarks me-2"></i>Film</small
+                      >
+                    </div>
+                    <a class="h4" href="detail.html"
+                      >Corporate Documentary & Promotional Film Shoot</a
+                    >
+                    <p class="mt-2">
+                      Professional film production for brand storytelling and
+                      marketing campaigns.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Blog 7 -->
+            <div
+              class="col-xl-6 col-lg-12 col-md-6 blog-item"
+              data-category="Festival"
+              data-title="Diwali Corporate Celebration"
+            >
+              <div class="h-100">
+                <div class="position-relative overflow-hidden blog-img-wrapper">
+                  <img
+                    class="img-fluid"
+                    src="img/logo/image6.jpg.jpeg"
+                    alt="Festival Event"
+                  />
+                </div>
+                <div class="bg-secondary d-flex">
+                  <div
+                    class="flex-shrink-0 d-flex flex-column justify-content-center text-center bg-primary text-white px-4"
+                  >
+                    <span>25</span>
+                    <h5 class="text-uppercase m-0">Sep</h5>
+                    <span>2024</span>
+                  </div>
+                  <div
+                    class="d-flex flex-column justify-content-center py-3 px-4"
+                  >
+                    <div class="d-flex mb-2">
+                      <small class="text-uppercase me-3"
+                        ><i class="bi bi-person me-2"></i>Admin</small
+                      >
+                      <small class="text-uppercase me-3"
+                        ><i class="bi bi-bookmarks me-2"></i>Festival</small
+                      >
+                    </div>
+                    <a class="h4" href="detail.html"
+                      >Diwali Corporate Celebration & Award Night</a
+                    >
+                    <p class="mt-2">
+                      Spectacular Diwali event with cultural performances,
+                      fireworks and employee recognition.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Blog 8 -->
+            <div
+              class="col-xl-6 col-lg-12 col-md-6 blog-item"
+              data-category="Conference"
+              data-title="National Youth Leadership Conference"
+            >
+              <div class="h-100">
+                <div class="position-relative overflow-hidden blog-img-wrapper">
+                  <img
+                    class="img-fluid"
+                    src="img/logo/image7.jpg.jpeg"
+                    alt="Conference"
+                  />
+                </div>
+                <div class="bg-secondary d-flex">
+                  <div
+                    class="flex-shrink-0 d-flex flex-column justify-content-center text-center bg-primary text-white px-4"
+                  >
+                    <span>08</span>
+                    <h5 class="text-uppercase m-0">Aug</h5>
+                    <span>2024</span>
+                  </div>
+                  <div
+                    class="d-flex flex-column justify-content-center py-3 px-4"
+                  >
+                    <div class="d-flex mb-2">
+                      <small class="text-uppercase me-3"
+                        ><i class="bi bi-person me-2"></i>Admin</small
+                      >
+                      <small class="text-uppercase me-3"
+                        ><i class="bi bi-bookmarks me-2"></i>Conference</small
+                      >
+                    </div>
+                    <a class="h4" href="detail.html"
+                      >National Youth Leadership Conference 2024</a
+                    >
+                    <p class="mt-2">
+                      Successful 3-day conference with motivational speakers and
+                      interactive workshops.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Blog list End -->
+
+        <!-- Sidebar Start -->
+        <div class="col-lg-4">
+          <!-- Search Form -->
+          <div class="mb-5">
+            <div class="input-group">
+              <input
+                type="text"
+                id="searchInput"
+                class="form-control p-3"
+                placeholder="Search blogs..."
+              />
+              <button class="btn btn-primary px-4">
+                <i class="bi bi-search"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Category Start -->
+          <div class="mb-5">
+            <h2 class="mb-4">Categories</h2>
+            <div
+              class="d-flex flex-column justify-content-start bg-secondary p-4"
+              id="categoryList"
+            >
+              <a
+                href="#"
+                class="h5 mb-3 category-link active-filter"
+                data-category="All"
+                ><i class="bi bi-arrow-right text-primary me-2"></i>All</a
+              >
+              <a href="#" class="h5 mb-3 category-link" data-category="Wedding"
+                ><i class="bi bi-arrow-right text-primary me-2"></i>Event and
+                Entertainment</a
+              >
+              <a href="#" class="h5 mb-3 category-link" data-category="Rural"
+                ><i class="bi bi-arrow-right text-primary me-2"></i>Rural
+                Marketing</a
+              >
+              <a
+                href="#"
+                class="h5 mb-3 category-link"
+                data-category="Experiential"
+                ><i class="bi bi-arrow-right text-primary me-2"></i>Experiential
+                Marketing</a
+              >
+              <a
+                href="#"
+                class="h5 mb-3 category-link"
+                data-category="Exhibition"
+                ><i class="bi bi-arrow-right text-primary me-2"></i
+                >Exhibitions</a
+              >
+              <a href="#" class="h5 mb-3 category-link" data-category="Film"
+                ><i class="bi bi-arrow-right text-primary me-2"></i>Film
+                Production</a
+              >
+              <a
+                href="#"
+                class="h5 mb-3 category-link"
+                data-category="Corporate"
+                ><i class="bi bi-arrow-right text-primary me-2"></i>Corporate</a
+              >
+              <a href="#" class="h5 category-link" data-category="Festival"
+                ><i class="bi bi-arrow-right text-primary me-2"></i>Festival</a
+              >
+            </div>
+          </div>
+
+          <!-- Recent Post, Banner, Tags (unchanged) -->
+          <div class="mb-5">
+            <h2 class="mb-4">Recent Post</h2>
+            <div class="d-flex mb-3">
+              <img
+                class="img-fluid"
+                src="img/logo/abandkar.jpg.jpeg"
+                style="width: 100px; height: 100px; object-fit: cover"
+                alt=""
+              />
+              <a
+                href="detail.html"
+                class="h5 d-flex align-items-center bg-secondary px-3 mb-0"
+                >Magical Destination Wedding at Lake View</a
+              >
+            </div>
+            <div class="d-flex mb-3">
+              <img
+                class="img-fluid"
+                src="img/logo/gangadharshan.jpg.jpeg"
+                style="width: 100px; height: 100px; object-fit: cover"
+                alt=""
+              />
+              <a
+                href="detail.html"
+                class="h5 d-flex align-items-center bg-secondary px-3 mb-0"
+                >Annual Business Summit 2025</a
+              >
+            </div>
+            <div class="d-flex">
+              <img
+                class="img-fluid"
+                src="img/logo/image2.jpeg"
+                style="width: 100px; height: 100px; object-fit: cover"
+                alt=""
+              />
+              <a
+                href="detail.html"
+                class="h5 d-flex align-items-center bg-secondary px-3 mb-0"
+                >Madhya Pradesh Expo 2024</a
+              >
+            </div>
+          </div>
+
+          <div class="mb-5">
+            <img src="img/logo/ladli bhena.jpeg" alt="" class="img-fluid" />
+          </div>
+
+          <div class="mb-5">
+            <h2 class="mb-4">Tag Cloud</h2>
+            <div class="d-flex flex-wrap m-n1">
+              <a href="#" class="btn btn-secondary m-1">Wedding</a>
+              <a href="#" class="btn btn-secondary m-1">Corporate</a>
+              <a href="#" class="btn btn-secondary m-1">Rural</a>
+              <a href="#" class="btn btn-secondary m-1">Experiential</a>
+              <a href="#" class="btn btn-secondary m-1">Exhibition</a>
+              <a href="#" class="btn btn-secondary m-1">Film</a>
+            </div>
+          </div>
+        </div>
+        <!-- Sidebar End -->
+      </div>
+    </div>
+    <!-- Blog End -->
+
+    <div class="container-fluid bg-dark text-secondary p-5 px-sm-3 px-lg-5">
+      <div class="row g-5">
+        <div class="col-lg-3 col-md-6">
+          <h3 class="text-white mb-4">Quick Links</h3>
+          <div class="d-flex flex-column justify-content-start">
+            <a class="text-secondary mb-2" href="#"
+              ><i class="bi bi-arrow-right text-primary me-2"></i>Home</a
+            >
+            <a class="text-secondary mb-2" href="#"
+              ><i class="bi bi-arrow-right text-primary me-2"></i>About Us</a
+            >
+            <a class="text-secondary mb-2" href="#"
+              ><i class="bi bi-arrow-right text-primary me-2"></i>Our
+              Services</a
+            >
+            <a class="text-secondary mb-2" href="#"
+              ><i class="bi bi-arrow-right text-primary me-2"></i>Latest Blog
+              Post</a
+            >
+            <a class="text-secondary" href="#"
+              ><i class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a
+            >
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h3 class="text-white mb-4">Popular Links</h3>
+          <div class="d-flex flex-column justify-content-start">
+            <a class="text-secondary mb-2" href="#"
+              ><i class="bi bi-arrow-right text-primary me-2"></i>Home</a
+            >
+            <a class="text-secondary mb-2" href="#"
+              ><i class="bi bi-arrow-right text-primary me-2"></i>About Us</a
+            >
+            <a class="text-secondary mb-2" href="#"
+              ><i class="bi bi-arrow-right text-primary me-2"></i>Our
+              Services</a
+            >
+            <a class="text-secondary mb-2" href="#"
+              ><i class="bi bi-arrow-right text-primary me-2"></i>Latest Blog
+              Post</a
+            >
+            <a class="text-secondary" href="#"
+              ><i class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a
+            >
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h3 class="text-white mb-4">Get In Touch</h3>
+          <p class="mb-2">
+            <i class="bi bi-geo-alt text-primary me-2"></i>Goyal vihar
+            apartment, Zone-II, Maharana Pratap Nagar, Bhopal, Madhya Pradesh
+            462011
+          </p>
+          <p class="mb-2">
+            <i class="bi bi-envelope-open text-primary me-2"></i
+            >mailus@akeventive.com
+          </p>
+          <p class="mb-0">
+            <i class="bi bi-telephone text-primary me-2"></i>+91-91 9911556070,
+            +91-7489476616
+          </p>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h3 class="text-white mb-4">Follow Us</h3>
+          <div class="d-flex">
+            <a
+              class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2"
+              href="https://x.com/AKEventive?t=IbPbXKBe7FyrYY1cG4PMDA&s=01"
+              ><i class="fab fa-twitter fw-normal"></i
+            ></a>
+            <a
+              class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2"
+              href=" https://www.facebook.com/profile.php?id=61555840487073&mibextid=ZbWKwL"
+              ><i class="fab fa-facebook-f fw-normal"></i
+            ></a>
+            <a
+              class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2"
+              href="https://www.linkedin.com/in/atlaknots-eventive-129ba02b2"
+              ><i class="fab fa-linkedin-in fw-normal"></i
+            ></a>
+            <a
+              class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2"
+              href="https://www.instagram.com/atlaknotseventive/"
+              ><i class="fab fa-instagram fw-normal"></i
+            ></a>
+            <a
+              class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2"
+              href="https://wa.me/91 9911556070?text="
+              ><i class="bi bi-whatsapp fw-normal"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="container-fluid bg-dark text-secondary text-center border-top py-4 px-5"
+      style="border-color: rgba(256, 256, 256, 0.1) !important"
+    >
+      <p class="m-0">
+        &copy;
+        <a class="text-secondary border-bottom" href="https://aiknotsit.com"
+          >AI Knots IT Solution.com</a
+        >. All Rights Reserved. Designed by
+        <a class="text-secondary border-bottom" href="samudd246@gmail.com"
+          >Sameer</a
+        >
+      </p>
+    </div>
+    <!-- Footer (same as before) -->
+    <!-- ... Your footer code remains the same ... -->
+
+    <!-- JavaScript for Search & Filter -->
+    <script>
+      const searchInput = document.getElementById("searchInput");
+      const blogItems = document.querySelectorAll(".blog-item");
+      const categoryLinks = document.querySelectorAll(".category-link");
+
+      // Search Function
+      searchInput.addEventListener("keyup", filterBlogs);
+
+      // Category Filter
+      categoryLinks.forEach((link) => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          categoryLinks.forEach((l) => l.classList.remove("active-filter"));
+          this.classList.add("active-filter");
+          filterBlogs();
+        });
+      });
+
+      function filterBlogs() {
+        const searchTerm = searchInput.value.toLowerCase().trim();
+        const activeCategory = document
+          .querySelector(".category-link.active-filter")
+          .getAttribute("data-category");
+
+        blogItems.forEach((item) => {
+          const title = item.getAttribute("data-title").toLowerCase();
+          const category = item.getAttribute("data-category");
+          const text = item.textContent.toLowerCase();
+
+          const matchesSearch =
+            title.includes(searchTerm) || text.includes(searchTerm);
+          const matchesCategory =
+            activeCategory === "All" || category === activeCategory;
+
+          if (matchesSearch && matchesCategory) {
+            item.style.display = "block";
+          } else {
+            item.style.display = "none";
+          }
+        });
+      }
+    </script>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

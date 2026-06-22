@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Gallery - ATLAKNOTS EVENTIVE</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="img/logo/eventive logo.png" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon Font Stylesheet -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+
+    <style>
+      .gallery-card {
+        transition: all 0.4s ease;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      }
+      .gallery-card:hover {
+        transform: scale(1.05);
+        box-shadow:
+          0 20px 25px -5px rgb(0 0 0 / 0.15),
+          0 8px 10px -6px rgb(0 0 0 / 0.15);
+      }
+      .gallery-card img {
+        height: 240px;
+        object-fit: cover;
+      }
+      .section-title {
+        position: relative;
+        display: inline-block;
+      }
+      .section-title:after {
+        content: "";
+        position: absolute;
+        width: 70px;
+        height: 3px;
+        background: #dc2626;
+        bottom: -10px;
+        left: 0;
+      }
+      .modal-content {
+        border-radius: 16px;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-secondary ps-5 pe-0 d-none d-lg-block">
+      <div class="row gx-0">
+        <div class="col-md-6 text-center text-lg-start mb-2 mb-lg-0">
+          <div class="d-inline-flex align-items-center">
+            <a class="text-body py-2 pe-3 border-end" href="#"
+              ><small>FAQs</small></a
+            >
+            <a class="text-body py-2 px-3 border-end" href="#"
+              ><small>Support</small></a
+            >
+            <a class="text-body py-2 px-3 border-end" href="#"
+              ><small>Privacy</small></a
+            >
+            <a class="text-body py-2 px-3 border-end" href="#"
+              ><small>Policy</small></a
+            >
+            <a class="text-body py-2 ps-3" href="#"><small>Career</small></a>
+          </div>
+        </div>
+        <div class="col-md-6 text-center text-lg-end">
+          <div
+            class="position-relative d-inline-flex align-items-center bg-primary text-white top-shape px-5"
+          >
+            <div class="me-3 pe-3 border-end py-2">
+              <p class="m-0">
+                <i class="fa fa-envelope-open me-2"></i>mailus@akeventive.com
+              </p>
+            </div>
+            <div class="py-2">
+              <p class="m-0">
+                <i class="fa fa-phone-alt me-2"></i>+91-9911556070,
+                +91-7489476616
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Topbar End -->
+
+    <!-- Navbar Start -->
+    <nav
+      class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-3 py-lg-0"
+    >
+      <a href="index.html" class="navbar-brand p-0">
+        <h1 class="m-0 text-uppercase text-primary">
+          <img
+            src="img/logo/eventive logo.png"
+            alt="Logo"
+            height="100px"
+            width="100px"
+          />
+        </h1>
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarCollapse"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto py-0 me-n3">
+          <a href="index.html" class="nav-item nav-link">Home</a>
+          <a href="about.html" class="nav-item nav-link">About</a>
+          <a href="service.html" class="nav-item nav-link">Service</a>
+          <div class="nav-item dropdown">
+            <a
+              href="#"
+              class="nav-link dropdown-toggle"
+              data-bs-toggle="dropdown"
+              >Pages</a
+            >
+            <div class="dropdown-menu m-0">
+              <a href="blog.html" class="dropdown-item">Blog Grid</a>
+              <a href="detail.html" class="dropdown-item">Blog Detail</a>
+              <a href="feature.html" class="dropdown-item">Features</a>
+              <a href="quote.html" class="dropdown-item">Quote Form</a>
+            </div>
+          </div>
+          <a href="contact.html" class="nav-item nav-link">Contact</a>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <div class="container-fluid bg-gray py-5 mb-5 page-header">
+      <div class="container py-5">
+        <div class="row justify-content-center">
+          <h1>Rural Events</h1>
+          <p>Welcome to our rural events gallery!</p>
+          <p>
+            Explore the vibrant and diverse rural events we have organized,
+            showcasing the rich cultural heritage and community spirit of rural
+            areas. From traditional festivals to local gatherings, our gallery
+            captures the essence of rural life and the joy of coming together as
+            a community.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gallery Section -->
+    <div class="container-fluid py-5">
+      <div class="container">
+        <!-- Rural Events -->
+        <div class="mb-5">
+          <h2 class="section-title text-4xl font-bold text-red-600 mb-4">
+            Rural Events
+          </h2>
+          <div class="row g-4" id="rural-events">
+            <!-- Event 1 -->
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100 shadow-sm border-0 overflow-hidden">
+                <img
+                  src="https://picsum.photos/id/1015/600/400"
+                  class="card-img-top"
+                  alt="Village Fair"
+                  style="height: 240px; object-fit: cover"
+                />
+                <div class="card-body">
+                  <h5 class="card-title fw-bold text-success">
+                    Village Mela (Fair)
+                  </h5>
+                  <p class="card-text text-muted small">
+                    Annual rural fair with local handicrafts, folk music, and
+                    traditional sweets. A perfect blend of culture and joy.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <small class="text-muted">📍 Rajasthan • 15 Aug 2025</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Event 2 -->
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100 shadow-sm border-0 overflow-hidden">
+                <img
+                  src="https://picsum.photos/id/133/600/400"
+                  class="card-img-top"
+                  alt="Harvest Festival"
+                  style="height: 240px; object-fit: cover"
+                />
+                <div class="card-body">
+                  <h5 class="card-title fw-bold text-success">
+                    Baisakhi Harvest Festival
+                  </h5>
+                  <p class="card-text text-muted small">
+                    Celebration of wheat harvest with Bhangra dance, langar, and
+                    community gatherings in Punjab villages.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <small class="text-muted">📍 Punjab • 13 Apr 2025</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Event 3 -->
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100 shadow-sm border-0 overflow-hidden">
+                <img
+                  src="https://picsum.photos/id/201/600/400"
+                  class="card-img-top"
+                  alt="Rural Folk Dance"
+                  style="height: 240px; object-fit: cover"
+                />
+                <div class="card-body">
+                  <h5 class="card-title fw-bold text-success">
+                    Ghoomar & Kalbelia Night
+                  </h5>
+                  <p class="card-text text-muted small">
+                    Enchanting folk dance performances by local artists under
+                    the stars in Rajasthan's rural setting.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <small class="text-muted">📍 Udaipur • 22 Sep 2025</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Event 4 -->
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100 shadow-sm border-0 overflow-hidden">
+                <img
+                  src="https://picsum.photos/id/251/600/400"
+                  class="card-img-top"
+                  alt="Onam Celebration"
+                  style="height: 240px; object-fit: cover"
+                />
+                <div class="card-body">
+                  <h5 class="card-title fw-bold text-success">Onam Festival</h5>
+                  <p class="card-text text-muted small">
+                    Kerala's biggest harvest festival with flower rangoli
+                    (pookalam), boat races, and traditional feasts.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <small class="text-muted">📍 Kerala • 10 Sep 2025</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Image Modal -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-secondary p-5 px-sm-3 px-lg-5">
+      <div class="row g-5">
+        <div class="col-lg-3 col-md-6">
+          <h3 class="text-white mb-4">Quick Links</h3>
+          <div class="d-flex flex-column justify-content-start">
+            <a class="text-secondary mb-2" href="#"
+              ><i class="bi bi-arrow-right text-primary me-2"></i>Home</a
+            >
+            <a class="text-secondary mb-2" href="#"
+              ><i class="bi bi-arrow-right text-primary me-2"></i>About Us</a
+            >
+            <a class="text-secondary mb-2" href="#"
+              ><i class="bi bi-arrow-right text-primary me-2"></i>Our
+              Services</a
+            >
+            <a class="text-secondary mb-2" href="#"
+              ><i class="bi bi-arrow-right text-primary me-2"></i>Latest Blog
+              Post</a
+            >
+            <a class="text-secondary" href="#"
+              ><i class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a
+            >
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h3 class="text-white mb-4">Popular Links</h3>
+          <div class="d-flex flex-column justify-content-start">
+            <a class="text-secondary mb-2" href="#"
+              ><i class="bi bi-arrow-right text-primary me-2"></i>Home</a
+            >
+            <a class="text-secondary mb-2" href="#"
+              ><i class="bi bi-arrow-right text-primary me-2"></i>About Us</a
+            >
+            <a class="text-secondary mb-2" href="#"
+              ><i class="bi bi-arrow-right text-primary me-2"></i>Our
+              Services</a
+            >
+            <a class="text-secondary mb-2" href="#"
+              ><i class="bi bi-arrow-right text-primary me-2"></i>Latest Blog
+              Post</a
+            >
+            <a class="text-secondary" href="#"
+              ><i class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a
+            >
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h3 class="text-white mb-4">Get In Touch</h3>
+          <p class="mb-2">
+            <i class="bi bi-geo-alt text-primary me-2"></i>Goyal vihar
+            apartment, Zone-II, Maharana Pratap Nagar, Bhopal, Madhya Pradesh
+            462011
+          </p>
+          <p class="mb-2">
+            <i class="bi bi-envelope-open text-primary me-2"></i
+            >mailus@akeventive.com
+          </p>
+          <p class="mb-0">
+            <i class="bi bi-telephone text-primary me-2"></i>+91-9911556070,
+            +91-7489476616
+          </p>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h3 class="text-white mb-4">Follow Us</h3>
+          <div class="d-flex">
+            <a
+              class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2"
+              href="https://x.com/AKEventive"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a
+              class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2"
+              href="https://www.facebook.com/profile.php?id=61555840487073"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2"
+              href="https://www.linkedin.com/in/atlaknots-eventive-129ba02b2"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a
+              class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2"
+              href="https://www.instagram.com/atlaknotseventive/"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2"
+              href="https://wa.me/919911556070"
+              ><i class="bi bi-whatsapp"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="container-fluid bg-dark text-secondary text-center border-top py-4 px-5"
+      style="border-color: rgba(256, 256, 256, 0.1) !important"
+    >
+      <p class="m-0">
+        &copy;
+        <a class="text-secondary border-bottom" href="https://aiknotsit.com"
+          >AI Knots IT Solution.com</a
+        >. All Rights Reserved. Designed by
+        <a
+          class="text-secondary border-bottom"
+          href="mailto:samudd246@gmail.com"
+          >Sameer</a
+        >
+      </p>
+    </div>
+    <!-- Footer End -->
+
+    <script>
+      const events = {
+        pm: [
+          {
+            title: "10th Vishwa Hindi Sammelan",
+            desc: "Grand stage setup with floral decoration",
+            img: "https://picsum.photos/id/1015/800/600",
+          },
+          {
+            title: "Vichar Maha Kumbh",
+            desc: "Night event with beautiful lighting and fountain show",
+            img: "https://picsum.photos/id/133/800/600",
+          },
+          {
+            title: "Singaji Power Plant",
+            desc: "Large auditorium setup with red chairs",
+            img: "https://picsum.photos/id/201/800/600",
+          },
+          {
+            title: "SAIL Power Plant",
+            desc: "Inauguration ceremony with dignitaries",
+            img: "https://picsum.photos/id/237/800/600",
+          },
+          {
+            title: "PM Visit - Bhopal",
+            desc: "Massive public gathering with stage",
+            img: "https://picsum.photos/id/870/800/600",
+          },
+          {
+            title: "National Education Day",
+            desc: "Beautiful cultural stage arrangement",
+            img: "https://picsum.photos/id/1018/800/600",
+          },
+        ],
+        gov: [
+          {
+            title: "Gyan Parv",
+            desc: "Cultural installation with globe and statue",
+            img: "https://picsum.photos/id/251/800/600",
+          },
+          {
+            title: "Atal Jyoti Abhiyan",
+            desc: "Grand stage with audience and dignitaries",
+            img: "https://picsum.photos/id/314/800/600",
+          },
+          {
+            title: "Beti Bachao Beti Padhao",
+            desc: "Ceremony with women and children in traditional attire",
+            img: "https://picsum.photos/id/64/800/600",
+          },
+          {
+            title: "Large Public Gathering",
+            desc: "Massive tent setup with stage and crowd",
+            img: "https://picsum.photos/id/870/800/600",
+          },
+          {
+            title: "Swachh Bharat Abhiyan",
+            desc: "Cleanliness drive event",
+            img: "https://picsum.photos/id/201/800/600",
+          },
+          {
+            title: "Republic Day Celebration",
+            desc: "State-level grand celebration",
+            img: "https://picsum.photos/id/133/800/600",
+          },
+        ],
+        rural: [
+          {
+            title: "Gram Panchayat Mahotsav",
+            desc: "Village fair with traditional folk dance and local art exhibition",
+            img: "https://picsum.photos/id/1016/800/600",
+          },
+          {
+            title: "Kisan Mela & Krishi Mahotsav",
+            desc: "Large agricultural fair with farmer gatherings and machinery display",
+            img: "https://picsum.photos/id/133/800/600",
+          },
+          {
+            title: "Rural Women Empowerment Camp",
+            desc: "Self-help group event with cultural program and award ceremony",
+            img: "https://picsum.photos/id/64/800/600",
+          },
+          {
+            title: "Village Cleanliness Drive",
+            desc: "Swachh Gram Abhiyan with community participation",
+            img: "https://picsum.photos/id/201/800/600",
+          },
+          {
+            title: "Rural Sports & Cultural Festival",
+            desc: "Kabaddi, wrestling and traditional folk performances",
+            img: "https://picsum.photos/id/251/800/600",
+          },
+          {
+            title: "Harvest Festival Celebration",
+            desc: "Bumper crop celebration with bullock cart race and village fair",
+            img: "https://picsum.photos/id/314/800/600",
+          },
+        ],
+      };
+
+      function createCard(event) {
+        const div = document.createElement("div");
+        div.className = "col-lg-3 col-md-6 col-sm-12";
+        div.innerHTML = `
+                <div class="gallery-card h-100 bg-white cursor-pointer" onclick="showImage('${event.title}', '${event.desc}', '${event.img}')">
+                    <img src="${event.img}" class="w-100" alt="${event.title}">
+                    <div class="p-4">
+                        <h5 class="mb-2">${event.title}</h5>
+                        <p class="text-muted small mb-0">${event.desc}</p>
+                    </div>
+                </div>
+            `;
+        return div;
+      }
+
+      function populateEvents() {
+        const pmContainer = document.getElementById("pm-events");
+        const govContainer = document.getElementById("gov-events");
+        const ruralContainer = document.getElementById("rural-events");
+
+        events.pm.forEach((event) =>
+          pmContainer.appendChild(createCard(event)),
+        );
+        events.gov.forEach((event) =>
+          govContainer.appendChild(createCard(event)),
+        );
+        events.rural.forEach((event) =>
+          ruralContainer.appendChild(createCard(event)),
+        );
+      }
+
+      function showImage(title, desc, img) {
+        document.getElementById("modalTitle").textContent = title;
+        document.getElementById("modalDesc").textContent = desc;
+        document.getElementById("modalImage").src = img;
+        new bootstrap.Modal(document.getElementById("imageModal")).show();
+      }
+
+      function closeModal() {
+        bootstrap.Modal.getInstance(
+          document.getElementById("imageModal"),
+        ).hide();
+      }
+
+      // Initialize
+      window.onload = populateEvents;
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
