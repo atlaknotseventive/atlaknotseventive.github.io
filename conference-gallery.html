@@ -176,120 +176,71 @@
       </div>
     </div>
 
+    <script>
+function showImage(element) {
+  const imgSrc = element.querySelector('img').src;
+  document.getElementById('modalImage').src = imgSrc;
+}
+</script>
     <!-- Gallery Section -->
-    <div class="container-fluid py-5">
-      <div class="container">
-        <!-- Conferences -->
-        <div class="mb-5">
-          <h2 class="section-title text-4xl font-bold text-red-600 mb-4">
-            Conferences
-          </h2>
-          <div class="row g-4" id="exhibitions">
-            <!-- Conference 1 -->
-            <div class="col-md-6 col-lg-4">
-              <div class="card h-100 shadow-sm border-0 overflow-hidden">
-                <img
-                  src="https://picsum.photos/id/1015/600/400"
-                  class="card-img-top"
-                  alt="Village Fair"
-                  style="height: 240px; object-fit: cover"
-                />
-                <div class="card-body">
-                  <h5 class="card-title fw-bold text-success">
-                    Village Mela (Fair)
-                  </h5>
-                  <p class="card-text text-muted small">
-                    Annual rural fair with local handicrafts, folk music, and
-                    traditional sweets. A perfect blend of culture and joy.
-                  </p>
-                  <div
-                    class="d-flex justify-content-between align-items-center"
-                  >
-                    <small class="text-muted">📍 Rajasthan • 15 Aug 2025</small>
-                  </div>
-                </div>
-              </div>
-            </div>
+   <div class="container-fluid py-5">
+  <div class="container">
+    <!-- Conferences -->
+    <div class="mb-5">
+      <h2 class="section-title text-4xl font-bold text-red-600 mb-4">
+        Conferences
+      </h2>
+      
+      <div class="row g-4" id="conferences">
 
-            <!-- Event 2 -->
-            <div class="col-md-6 col-lg-4">
-              <div class="card h-100 shadow-sm border-0 overflow-hidden">
-                <img
-                  src="https://picsum.photos/id/133/600/400"
-                  class="card-img-top"
-                  alt="Harvest Festival"
-                  style="height: 240px; object-fit: cover"
-                />
-                <div class="card-body">
-                  <h5 class="card-title fw-bold text-success">
-                    Baisakhi Harvest Festival
-                  </h5>
-                  <p class="card-text text-muted small">
-                    Celebration of wheat harvest with Bhangra dance, langar, and
-                    community gatherings in Punjab villages.
-                  </p>
-                  <div
-                    class="d-flex justify-content-between align-items-center"
-                  >
-                    <small class="text-muted">📍 Punjab • 13 Apr 2025</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Event 3 -->
-            <div class="col-md-6 col-lg-4">
-              <div class="card h-100 shadow-sm border-0 overflow-hidden">
-                <img
-                  src="https://picsum.photos/id/201/600/400"
-                  class="card-img-top"
-                  alt="Rural Folk Dance"
-                  style="height: 240px; object-fit: cover"
-                />
-                <div class="card-body">
-                  <h5 class="card-title fw-bold text-success">
-                    Ghoomar & Kalbelia Night
-                  </h5>
-                  <p class="card-text text-muted small">
-                    Enchanting folk dance performances by local artists under
-                    the stars in Rajasthan's rural setting.
-                  </p>
-                  <div
-                    class="d-flex justify-content-between align-items-center"
-                  >
-                    <small class="text-muted">📍 Udaipur • 22 Sep 2025</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Event 4 -->
-            <div class="col-md-6 col-lg-4">
-              <div class="card h-100 shadow-sm border-0 overflow-hidden">
-                <img
-                  src="https://picsum.photos/id/251/600/400"
-                  class="card-img-top"
-                  alt="Onam Celebration"
-                  style="height: 240px; object-fit: cover"
-                />
-                <div class="card-body">
-                  <h5 class="card-title fw-bold text-success">Onam Festival</h5>
-                  <p class="card-text text-muted small">
-                    Kerala's biggest harvest festival with flower rangoli
-                    (pookalam), boat races, and traditional feasts.
-                  </p>
-                  <div
-                    class="d-flex justify-content-between align-items-center"
-                  >
-                    <small class="text-muted">📍 Kerala • 10 Sep 2025</small>
-                  </div>
-                </div>
+        <!-- Conference 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm border-0 overflow-hidden">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal" 
+               onclick="showImage(this)">
+              <img
+                src="/img/logo/exhibition2.jpg.jpeg"
+                class="card-img-top"
+                alt="Conference"
+                style="height: 240px; object-fit: cover; cursor: pointer;"
+              />
+            </a>
+            
+            <div class="card-body">
+              <h5 class="card-title fw-bold text-success">
+                Village Mela (Fair)
+              </h5>
+              <p class="card-text text-muted small">
+                Annual rural fair with local handicrafts, folk music, and
+                traditional sweets. A perfect blend of culture and joy.
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted">📍 Rajasthan • 15 Aug 2025</small>
               </div>
             </div>
           </div>
         </div>
+
+        <!-- Add more conferences here by copying the block above -->
+
       </div>
     </div>
+  </div>
+</div>
+
+<!-- ====================== Image Modal (Add only once on the page) ====================== -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-0 text-center">
+        <img id="modalImage" src="/img/logo/exhibition2.jpg.jpeg" class="img-fluid" alt="Event Image" style="max-height: 85vh; width: auto;">
+      </div>
+    </div>
+  </div>
+</div>
 
     <!-- Image Modal -->
 

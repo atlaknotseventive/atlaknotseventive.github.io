@@ -325,26 +325,7 @@
             desc: "Grand stage setup with floral decoration",
             img: "./img/event1.jpg",
           },
-          {
-            title: "Vichar Maha Kumbh",
-            desc: "Night event with beautiful lighting and fountain show",
-            img: "./img/event2.jpg",
-          },
-          {
-            title: "Singaji Power Plant",
-            desc: "Large auditorium setup with red chairs",
-            img: "./img/event3.jpg",
-          },
-          {
-            title: "SAIL Power Plant",
-            desc: "Inauguration ceremony with dignitaries",
-            img: "./img/event4.jpg",
-          },
-          {
-            title: "PM Visit - Bhopal",
-            desc: "Massive public gathering with stage",
-            img: "./img/event5.jpg",
-          },
+
           {
             title: "National Education Day",
             desc: "Beautiful cultural stage arrangement",
@@ -355,32 +336,32 @@
           {
             title: "Gyan Parv",
             desc: "Cultural installation with globe and statue",
-            img: "./img/event7.jpg",
+            img: "./img/logo/chandarwatiganj.jpg.jpeg", // Fixed duplicated path
           },
           {
-            title: "Atal Jyoti Abhiyan",
-            desc: "Grand stage with audience and dignitaries",
-            img: "./img/event8.jpg",
+            title: "Gangadharshan",
+            desc: "Gangadharshan event with traditional decoration",
+            img: "./img/logo/gangadharshan.jpg.jpeg",
           },
           {
-            title: "Beti Bachao Beti Padhao",
-            desc: "Ceremony with women and children in traditional attire",
-            img: "./img/event9.jpg",
+            title: "Cultural Ceremony",
+            desc: "Traditional cultural ceremony with stage and lighting",
+            img: "./img/logo/image3.jpg.jpeg",
           },
           {
-            title: "Large Public Gathering",
-            desc: "Massive tent setup with stage and crowd",
-            img: "./img/event10.jpg",
+            title: "Jan Jatiya Gaurav Diwas",
+            desc: "Celebration of tribal pride and culture",
+            img: "./img/logo/janjatoigoravdiwas2.jpg.jpeg",
           },
           {
-            title: "Swachh Bharat Abhiyan",
+            title: "Chaturtha Diksha Divas",
             desc: "Cleanliness drive event",
-            img: "./img/event11.jpg",
+            img: "./img/logo/image5.jpg.jpeg",
           },
           {
-            title: "Republic Day Celebration",
+            title: "Ladli Behna Diwas",
             desc: "State-level grand celebration",
-            img: "./img/event12.jpg",
+            img: "./img/logo/ladlibhena2.jpeg",
           },
         ],
       };
@@ -388,21 +369,39 @@
       function createCard(event) {
         const div = document.createElement("div");
         div.className = "col-lg-3 col-md-6 col-sm-12";
+
         div.innerHTML = `
-                <div class="gallery-card h-100 bg-white cursor-pointer" onclick="showImage('${event.title}', '${event.desc}', '${event.img}')">
-                    <img src="${event.img}" class="w-100" alt="${event.title}">
-                    <div class="p-4">
-                        <h5 class="mb-2">${event.title}</h5>
-                        <p class="text-muted small mb-0">${event.desc}</p>
-                    </div>
+            <div class="gallery-card h-100 bg-white cursor-pointer">
+                <img src="${event.img}" class="w-100" alt="${event.title}" loading="lazy">
+                <div class="p-4">
+                    <h5 class="mb-2">${event.title}</h5>
+                    <p class="text-muted small mb-0">${event.desc}</p>
                 </div>
-            `;
+            </div>
+        `;
+
+        // Better approach: attach click listener in JS (safer than inline onclick)
+        div.querySelector(".gallery-card").addEventListener("click", () => {
+          showImage(event.title, event.desc, event.img);
+        });
+
         return div;
       }
 
       function populateEvents() {
         const pmContainer = document.getElementById("pm-events");
         const govContainer = document.getElementById("gov-events");
+
+        if (!pmContainer || !govContainer) {
+          console.error(
+            "Event containers (#pm-events or #gov-events) not found!",
+          );
+          return;
+        }
+
+        // Clear existing content first (prevents duplicates on re-run)
+        pmContainer.innerHTML = "";
+        govContainer.innerHTML = "";
 
         events.pm.forEach((event) =>
           pmContainer.appendChild(createCard(event)),
@@ -413,20 +412,31 @@
       }
 
       function showImage(title, desc, img) {
+        const modal = document.getElementById("imageModal");
+        if (!modal) {
+          console.error("Modal #imageModal not found!");
+          return;
+        }
+
         document.getElementById("modalTitle").textContent = title;
         document.getElementById("modalDesc").textContent = desc;
-        document.getElementById("modalImage").src = img;
-        new bootstrap.Modal(document.getElementById("imageModal")).show();
+        const modalImage = document.getElementById("modalImage");
+        if (modalImage) modalImage.src = img;
+
+        new bootstrap.Modal(modal).show();
       }
 
-      function closeModal() {
-        bootstrap.Modal.getInstance(
-          document.getElementById("imageModal"),
-        ).hide();
-      }
+      // Optional: expose close function if needed in HTML
+      window.closeModal = function () {
+        const modalEl = document.getElementById("imageModal");
+        if (modalEl) {
+          const modal = bootstrap.Modal.getInstance(modalEl);
+          if (modal) modal.hide();
+        }
+      };
 
-      // Initialize
-      window.onload = populateEvents;
+      // Initialize when DOM is ready (better than window.onload)
+      document.addEventListener("DOMContentLoaded", populateEvents);
     </script>
 
     <!-- Bootstrap JS (required for modal) -->
