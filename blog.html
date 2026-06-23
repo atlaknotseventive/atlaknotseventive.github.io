@@ -195,510 +195,405 @@
       </div>
     </div>
     <!-- Page Header End -->
+<style>
+    .blog-hero {
+      background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)), 
+                  url('img/blog-hero.jpg') center/cover no-repeat;
+      height: 480px;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
 
-    <!-- Blog Start -->
-    <div class="container-fluid py-6 px-5">
-      <div class="row g-5">
-        <!-- Blog list Start -->
-        <div class="col-lg-8">
-          <div class="row g-5" id="blogContainer">
-            <!-- Blog 1 -->
-            <div
-              class="col-xl-6 col-lg-12 col-md-6 blog-item"
-              data-category="Wedding"
-              data-title="Magical Destination Wedding"
-            >
-              <div class="h-100">
-                <div class="position-relative overflow-hidden blog-img-wrapper">
-                  <img
-                    class="img-fluid"
-                    src="img/logo/janjatoigoravdiwas2.jpg.jpeg"
-                    alt="Grand Wedding"
-                  />
-                </div>
-                <div class="bg-secondary d-flex">
-                  <div
-                    class="flex-shrink-0 d-flex flex-column justify-content-center text-center bg-primary text-white px-4"
-                  >
-                    <span>15</span>
-                    <h5 class="text-uppercase m-0">Mar</h5>
-                    <span>2025</span>
-                  </div>
-                  <div
-                    class="d-flex flex-column justify-content-center py-3 px-4"
-                  >
-                    <div class="d-flex mb-2">
-                      <small class="text-uppercase me-3"
-                        ><i class="bi bi-person me-2"></i>Admin</small
-                      >
-                      <small class="text-uppercase me-3"
-                        ><i class="bi bi-bookmarks me-2"></i>Wedding</small
-                      >
-                    </div>
-                    <a class="h4" href="detail.html"
-                      >Annadata Saman Samrao</a
-                    >
-                    <p class="mt-2">
-                      A magical destination wedding with elaborate decor, live
-                      music, and a grand celebration for the couple and their
-                      guests.
-                    </p>
-                  </div>
+    .blog-card {
+      transition: all 0.4s ease;
+      border: none;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      height: 100%;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 20px 35px rgba(0,0,0,0.15);
+    }
+
+    .blog-img-wrapper {
+      height: 260px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .blog-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .blog-card:hover .blog-img-wrapper img {
+      transform: scale(1.1);
+    }
+
+    .blog-date {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: white;
+      padding: 8px 14px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      z-index: 2;
+    }
+
+    .category-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: rgba(0,123,255,0.9);
+      color: white;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .blog-content {
+      padding: 1.5rem;
+    }
+
+    .category-link {
+      transition: all 0.3s ease;
+      color: #333;
+      text-decoration: none;
+    }
+
+    .category-link:hover {
+      background-color: #f8f9fa;
+      transform: translateX(8px);
+      border-radius: 8px;
+    }
+
+    .category-link.active-filter {
+      background-color: #007bff !important;
+      color: white !important;
+    }
+
+    .active-filter {
+      background-color: #007bff !important;
+      color: white !important;
+    }
+</style>
+
+<!-- Blog Start -->
+<div class="container-fluid py-6 px-5">
+  <div class="row g-5">
+
+    <!-- Blog List Start -->
+    <div class="col-lg-8">
+      <div class="row g-5" id="blogContainer">
+
+        <!-- Blog 1 -->
+        <div class="col-xl-6 col-lg-12 col-md-6 blog-item" data-category="Wedding" data-title="Annadata Saman Samrao">
+          <a href="detail.html?id=1" class="text-decoration-none">
+            <div class="blog-card h-100">
+              <div class="position-relative overflow-hidden blog-img-wrapper">
+                <img class="img-fluid" src="img/logo/janjatoigoravdiwas2.jpg.jpeg" alt="Grand Wedding" />
+                <div class="category-badge">Wedding</div>
+                <div class="blog-date">
+                  <span class="d-block fw-bold text-primary">15</span>
+                  <small>MAR</small><br><small>2025</small>
                 </div>
               </div>
-            </div>
-
-            <!-- Blog 2 -->
-            <div
-              class="col-xl-6 col-lg-12 col-md-6 blog-item"
-              data-category="Corporate"
-              data-title="Annual Business Summit"
-            >
-              <div class="h-100">
-                <div class="position-relative overflow-hidden blog-img-wrapper">
-                  <img
-                    class="img-fluid"
-                    src="img/logo/andhata.jpeg"
-                    alt="Corporate Event"
-                  />
+              <div class="blog-content bg-white">
+                <div class="d-flex mb-2">
+                  <small class="text-uppercase me-3"><i class="bi bi-person me-2"></i>Admin</small>
+                  <small class="text-uppercase me-3"><i class="bi bi-bookmarks me-2"></i>Wedding</small>
                 </div>
-                <div class="bg-secondary d-flex">
-                  <div
-                    class="flex-shrink-0 d-flex flex-column justify-content-center text-center bg-primary text-white px-4"
-                  >
-                    <span>29</span>
-                    <h5 class="text-uppercase m-0">Jan</h5>
-                    <span>2026</span>
-                  </div>
-                  <div
-                    class="d-flex flex-column justify-content-center py-3 px-4"
-                  >
-                    <div class="d-flex mb-2">
-                      <small class="text-uppercase me-3"
-                        ><i class="bi bi-person me-2"></i>Admin</small
-                      >
-                      <small class="text-uppercase me-3"
-                        ><i class="bi bi-bookmarks me-2"></i>Corporate</small
-                      >
-                    </div>
-                    <a class="h4" href="detail.html"
-                      >Annadata Saman Samrao</a
-                    >
-                    <p class="mt-2">
-                      A successful annual business summit with keynote speakers,
-                      panel discussions, and networking opportunities for
-                      industry leaders.
-                    </p>
-                  </div>
-                </div>
+                <h5 class="mb-3">Annadata Saman Samrao</h5>
+                <p class="text-muted">A magical destination wedding with elaborate decor, live music, and a grand celebration for the couple and their guests.</p>
+                <span class="text-primary">Read More →</span>
               </div>
             </div>
-
-            <!-- Add remaining blogs similarly with data-category -->
-            <!-- Blog 3 -->
-            <div
-              class="col-xl-6 col-lg-12 col-md-6 blog-item"
-              data-category="Rural"
-              data-title="Village Haat Activation"
-            >
-              <div class="h-100">
-                <div class="position-relative overflow-hidden blog-img-wrapper">
-                  <img
-                    class="img-fluid"
-                    src="img/logo/abandkar.jpg.jpeg"
-                    alt="Rural Marketing"
-                  />
-                </div>
-                <div class="bg-secondary d-flex">
-                  <div
-                    class="flex-shrink-0 d-flex flex-column justify-content-center text-center bg-primary text-white px-4"
-                  >
-                    <span>14</span>
-                    <h5 class="text-uppercase m-0">April</h5>
-                    <span>2026</span>
-                  </div>
-                  <div
-                    class="d-flex flex-column justify-content-center py-3 px-4"
-                  >
-                    <div class="d-flex mb-2">
-                      <small class="text-uppercase me-3"
-                        ><i class="bi bi-person me-2"></i>Admin</small
-                      >
-                      <small class="text-uppercase me-3"
-                        ><i class="bi bi-bookmarks me-2"></i>Rural</small
-                      >
-                    </div>
-                    <a class="h4" href="detail.html"
-                      >Dr. Ambedkar Jayanti Celebration</a
-                    >
-                    <p class="mt-2">
-                      Engaging rural audience through folk performances, product
-                      demos and community games.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Blog 4 -->
-            <div
-              class="col-xl-6 col-lg-12 col-md-6 blog-item"
-              data-category="Experiential"
-              data-title="Immersive Brand Experience"
-            >
-              <div class="h-100">
-                <div class="position-relative overflow-hidden blog-img-wrapper">
-                  <img
-                    class="img-fluid"
-                    src="img/logo/gangadharshan.jpg.jpeg"
-                    alt="Experiential Marketing"
-                  />
-                </div>
-                <div class="bg-secondary d-flex">
-                  <div
-                    class="flex-shrink-0 d-flex flex-column justify-content-center text-center bg-primary text-white px-4"
-                  >
-                    <span>25</span>
-                    <h5 class="text-uppercase m-0">May</h5>
-                    <span>2026</span>
-                  </div>
-                  <div
-                    class="d-flex flex-column justify-content-center py-3 px-4"
-                  >
-                    <div class="d-flex mb-2">
-                      <small class="text-uppercase me-3"
-                        ><i class="bi bi-person me-2"></i>Admin</small
-                      >
-                      <small class="text-uppercase me-3"
-                        ><i class="bi bi-bookmarks me-2"></i>Experiential</small
-                      >
-                    </div>
-                    <a class="h4" href="detail.html"
-                      >Ganga dharshan </a
-                    >
-                    <p class="mt-2">
-                      Creating immersive brand experiences with interactive
-                      installations and live demonstrations.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Blog 5 -->
-            <div
-              class="col-xl-6 col-lg-12 col-md-6 blog-item"
-              data-category="Exhibition"
-              data-title="Madhya Pradesh Expo"
-            >
-              <div class="h-100">
-                <div class="position-relative overflow-hidden blog-img-wrapper">
-                  <img
-                    class="img-fluid"
-                    src="img/logo/image3.jpg.jpeg"
-                    alt="Exhibition"
-                  />
-                </div>
-                <div class="bg-secondary d-flex">
-                  <div
-                    class="flex-shrink-0 d-flex flex-column justify-content-center text-center bg-primary text-white px-4"
-                  >
-                    <span>28</span>
-                    <h5 class="text-uppercase m-0">Nov</h5>
-                    <span>2024</span>
-                  </div>
-                  <div
-                    class="d-flex flex-column justify-content-center py-3 px-4"
-                  >
-                    <div class="d-flex mb-2">
-                      <small class="text-uppercase me-3"
-                        ><i class="bi bi-person me-2"></i>Admin</small
-                      >
-                      <small class="text-uppercase me-3"
-                        ><i class="bi bi-bookmarks me-2"></i>Exhibition</small
-                      >
-                    </div>
-                    <a class="h4" href="detail.html"
-                      >Samuhik Kanya Vivah</a
-                    >
-                    <p class="mt-2">
-                      Successful exhibition showcasing local businesses and
-                      products, attracting thousands of visitors.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Blog 6 -->
-            <div
-              class="col-xl-6 col-lg-12 col-md-6 blog-item"
-              data-category="Film"
-              data-title="Corporate Documentary"
-            >
-              <div class="h-100">
-                <div class="position-relative overflow-hidden blog-img-wrapper">
-                  <img
-                    class="img-fluid"
-                    src="img/logo/image5.jpg.jpeg"
-                    alt="Film Production"
-                  />
-                </div>
-                <div class="bg-secondary d-flex">
-                  <div
-                    class="flex-shrink-0 d-flex flex-column justify-content-center text-center bg-primary text-white px-4"
-                  >
-                    <span>18</span>
-                    <h5 class="text-uppercase m-0">Oct</h5>
-                    <span>2024</span>
-                  </div>
-                  <div
-                    class="d-flex flex-column justify-content-center py-3 px-4"
-                  >
-                    <div class="d-flex mb-2">
-                      <small class="text-uppercase me-3"
-                        ><i class="bi bi-person me-2"></i>Admin</small
-                      >
-                      <small class="text-uppercase me-3"
-                        ><i class="bi bi-bookmarks me-2"></i>Film</small
-                      >
-                    </div>
-                    <a class="h4" href="detail.html"
-                      >Chaturth Dikshant Divas</a
-                    >
-                    <p class="mt-2">
-                      A corporate documentary capturing the essence of the
-                      company's journey, achievements, and future vision.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Blog 7 -->
-            <div
-              class="col-xl-6 col-lg-12 col-md-6 blog-item"
-              data-category="Festival"
-              data-title="Diwali Corporate Celebration"
-            >
-              <div class="h-100">
-                <div class="position-relative overflow-hidden blog-img-wrapper">
-                  <img
-                    class="img-fluid"
-                    src="img/logo/image6.jpg.jpeg"
-                    alt="Festival Event"
-                  />
-                </div>
-                <div class="bg-secondary d-flex">
-                  <div
-                    class="flex-shrink-0 d-flex flex-column justify-content-center text-center bg-primary text-white px-4"
-                  >
-                    <span>25</span>
-                    <h5 class="text-uppercase m-0">Sep</h5>
-                    <span>2024</span>
-                  </div>
-                  <div
-                    class="d-flex flex-column justify-content-center py-3 px-4"
-                  >
-                    <div class="d-flex mb-2">
-                      <small class="text-uppercase me-3"
-                        ><i class="bi bi-person me-2"></i>Admin</small
-                      >
-                      <small class="text-uppercase me-3"
-                        ><i class="bi bi-bookmarks me-2"></i>Festival</small
-                      >
-                    </div>
-                    <a class="h4" href="detail.html"
-                      >Ganga Dharshan</a
-                    >
-                    <p class="mt-2">
-                      Spectacular Diwali event with cultural performances,
-                      fireworks and employee recognition.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Blog 8 -->
-            <div
-              class="col-xl-6 col-lg-12 col-md-6 blog-item"
-              data-category="Conference"
-              data-title="National Youth Leadership Conference"
-            >
-              <div class="h-100">
-                <div class="position-relative overflow-hidden blog-img-wrapper">
-                  <img
-                    class="img-fluid"
-                    src="img/logo/image7.jpg.jpeg"
-                    alt="Conference"
-                  />
-                </div>
-                <div class="bg-secondary d-flex">
-                  <div
-                    class="flex-shrink-0 d-flex flex-column justify-content-center text-center bg-primary text-white px-4"
-                  >
-                    <span>08</span>
-                    <h5 class="text-uppercase m-0">Aug</h5>
-                    <span>2024</span>
-                  </div>
-                  <div
-                    class="d-flex flex-column justify-content-center py-3 px-4"
-                  >
-                    <div class="d-flex mb-2">
-                      <small class="text-uppercase me-3"
-                        ><i class="bi bi-person me-2"></i>Admin</small
-                      >
-                      <small class="text-uppercase me-3"
-                        ><i class="bi bi-bookmarks me-2"></i>Conference</small
-                      >
-                    </div>
-                    <a class="h4" href="detail.html"
-                      >National Youth Leadership Conference 2024</a
-                    >
-                    <p class="mt-2">
-                      Successful 3-day conference with motivational speakers and
-                      interactive workshops.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          </a>
         </div>
-        <!-- Blog list End -->
 
-        <!-- Sidebar Start -->
-        <div class="col-lg-4">
-          <!-- Search Form -->
-          <div class="mb-5">
-            <div class="input-group">
-              <input
-                type="text"
-                id="searchInput"
-                class="form-control p-3"
-                placeholder="Search blogs..."
-              />
-              <button class="btn btn-primary px-4">
-                <i class="bi bi-search"></i>
-              </button>
+        <!-- Blog 2 -->
+        <div class="col-xl-6 col-lg-12 col-md-6 blog-item" data-category="Corporate" data-title="Annual Business Summit">
+          <a href="detail.html?id=2" class="text-decoration-none">
+            <div class="blog-card h-100">
+              <div class="position-relative overflow-hidden blog-img-wrapper">
+                <img class="img-fluid" src="img/logo/andhata.jpeg" alt="Corporate Event" />
+                <div class="category-badge">Corporate</div>
+                <div class="blog-date">
+                  <span class="d-block fw-bold text-primary">29</span>
+                  <small>JAN</small><br><small>2026</small>
+                </div>
+              </div>
+              <div class="blog-content bg-white">
+                <div class="d-flex mb-2">
+                  <small class="text-uppercase me-3"><i class="bi bi-person me-2"></i>Admin</small>
+                  <small class="text-uppercase me-3"><i class="bi bi-bookmarks me-2"></i>Corporate</small>
+                </div>
+                <h5 class="mb-3">Annadata Saman Samrao</h5>
+                <p class="text-muted">A successful annual business summit with keynote speakers, panel discussions, and networking opportunities.</p>
+                <span class="text-primary">Read More →</span>
+              </div>
             </div>
-          </div>
-
-          <!-- Category Start -->
-          <div class="mb-5">
-            <h2 class="mb-4">Categories</h2>
-            <div
-              class="d-flex flex-column justify-content-start bg-secondary p-4"
-              id="categoryList"
-            >
-              <a
-                href="#"
-                class="h5 mb-3 category-link active-filter"
-                data-category="All"
-                ><i class="bi bi-arrow-right text-primary me-2"></i>All</a
-              >
-              <a href="#" class="h5 mb-3 category-link" data-category="Wedding"
-                ><i class="bi bi-arrow-right text-primary me-2"></i>Event and
-                Entertainment</a
-              >
-              <a href="#" class="h5 mb-3 category-link" data-category="Rural"
-                ><i class="bi bi-arrow-right text-primary me-2"></i>Rural
-                Marketing</a
-              >
-              <a
-                href="#"
-                class="h5 mb-3 category-link"
-                data-category="Experiential"
-                ><i class="bi bi-arrow-right text-primary me-2"></i>Experiential
-                Marketing</a
-              >
-              <a
-                href="#"
-                class="h5 mb-3 category-link"
-                data-category="Exhibition"
-                ><i class="bi bi-arrow-right text-primary me-2"></i
-                >Exhibitions</a
-              >
-              <a href="#" class="h5 mb-3 category-link" data-category="Film"
-                ><i class="bi bi-arrow-right text-primary me-2"></i>Film
-                Production</a
-              >
-              <a
-                href="#"
-                class="h5 mb-3 category-link"
-                data-category="Corporate"
-                ><i class="bi bi-arrow-right text-primary me-2"></i>Corporate</a
-              >
-              <a href="#" class="h5 category-link" data-category="Festival"
-                ><i class="bi bi-arrow-right text-primary me-2"></i>Festival</a
-              >
-            </div>
-          </div>
-
-          <!-- Recent Post, Banner, Tags (unchanged) -->
-          <div class="mb-5">
-            <h2 class="mb-4">Recent Post</h2>
-            <div class="d-flex mb-3">
-              <img
-                class="img-fluid"
-                src="img/logo/abandkar.jpg.jpeg"
-                style="width: 100px; height: 100px; object-fit: cover"
-                alt=""
-              />
-              <a
-                href="detail.html"
-                class="h5 d-flex align-items-center bg-secondary px-3 mb-0"
-                >Dr. Ambedkar Jayanti Celebration</a
-              >
-            </div>
-            <div class="d-flex mb-3">
-              <img
-                class="img-fluid"
-                src="img/logo/gangadharshan.jpg.jpeg"
-                style="width: 100px; height: 100px; object-fit: cover"
-                alt=""
-              />
-              <a
-                href="detail.html"
-                class="h5 d-flex align-items-center bg-secondary px-3 mb-0"
-                >Annadata Saman Samrao</a
-              >
-            </div>
-            <div class="d-flex">
-              <img
-                class="img-fluid"
-                src="img/logo/image2.jpeg"
-                style="width: 100px; height: 100px; object-fit: cover"
-                alt=""
-              />
-              <a
-                href="detail.html"
-                class="h5 d-flex align-items-center bg-secondary px-3 mb-0"
-                >Madhya Pradesh Expo 2024</a
-              >
-            </div>
-          </div>
-
-          <div class="mb-5">
-            <img src="img/logo/ladli bhena.jpeg" alt="" class="img-fluid" />
-          </div>
-
-          <div class="mb-5">
-            <h2 class="mb-4">Tag Cloud</h2>
-            <div class="d-flex flex-wrap m-n1">
-              <a href="#" class="btn btn-secondary m-1">Wedding</a>
-              <a href="#" class="btn btn-secondary m-1">Corporate</a>
-              <a href="#" class="btn btn-secondary m-1">Rural</a>
-              <a href="#" class="btn btn-secondary m-1">Experiential</a>
-              <a href="#" class="btn btn-secondary m-1">Exhibition</a>
-              <a href="#" class="btn btn-secondary m-1">Film</a>
-            </div>
-          </div>
+          </a>
         </div>
-        <!-- Sidebar End -->
+
+        <!-- Blog 3 to Blog 8 (same as you provided) -->
+        <!-- Blog 3 -->
+        <div class="col-xl-6 col-lg-12 col-md-6 blog-item" data-category="Rural" data-title="Dr. Ambedkar Jayanti Celebration">
+          <a href="detail.html?id=3" class="text-decoration-none">
+            <div class="blog-card h-100">
+              <div class="position-relative overflow-hidden blog-img-wrapper">
+                <img class="img-fluid" src="img/logo/abandkar.jpg.jpeg" alt="Rural Marketing" />
+                <div class="category-badge">Rural</div>
+                <div class="blog-date">
+                  <span class="d-block fw-bold text-primary">14</span>
+                  <small>APR</small><br><small>2026</small>
+                </div>
+              </div>
+              <div class="blog-content bg-white">
+                <div class="d-flex mb-2">
+                  <small class="text-uppercase me-3"><i class="bi bi-person me-2"></i>Admin</small>
+                  <small class="text-uppercase me-3"><i class="bi bi-bookmarks me-2"></i>Rural</small>
+                </div>
+                <h5 class="mb-3">Dr. Ambedkar Jayanti Celebration</h5>
+                <p class="text-muted">Celebrating the birth anniversary of Dr. Bhimrao Ambedkar with cultural programs and community engagement.</p>
+                <span class="text-primary">Read More →</span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Blog 4 -->
+        <div class="col-xl-6 col-lg-12 col-md-6 blog-item" data-category="Experiential" data-title="Ganga Dharshan">
+          <a href="detail.html?id=4" class="text-decoration-none">
+            <div class="blog-card h-100">
+              <div class="position-relative overflow-hidden blog-img-wrapper">
+                <img class="img-fluid" src="img/logo/gangadharshan.jpg.jpeg" alt="Experiential Marketing" />
+                <div class="category-badge">Experiential</div>
+                <div class="blog-date">
+                  <span class="d-block fw-bold text-primary">25</span>
+                  <small>MAY</small><br><small>2026</small>
+                </div>
+              </div>
+              <div class="blog-content bg-white">
+                <div class="d-flex mb-2">
+                  <small class="text-uppercase me-3"><i class="bi bi-person me-2"></i>Admin</small>
+                  <small class="text-uppercase me-3"><i class="bi bi-bookmarks me-2"></i>Experiential</small>
+                </div>
+                <h5 class="mb-3">Ganga Dharshan</h5>
+                <p class="text-muted">Creating immersive brand experiences with interactive installations and live demonstrations.</p>
+                <span class="text-primary">Read More →</span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Blog 5 -->
+        <div class="col-xl-6 col-lg-12 col-md-6 blog-item" data-category="Exhibition" data-title="Samuhik Kanya Vivah">
+          <a href="detail.html?id=5" class="text-decoration-none">
+            <div class="blog-card h-100">
+              <div class="position-relative overflow-hidden blog-img-wrapper">
+                <img class="img-fluid" src="img/logo/image3.jpg.jpeg" alt="Exhibition" />
+                <div class="category-badge">Exhibition</div>
+                <div class="blog-date">
+                  <span class="d-block fw-bold text-primary">28</span>
+                  <small>NOV</small><br><small>2024</small>
+                </div>
+              </div>
+              <div class="blog-content bg-white">
+                <div class="d-flex mb-2">
+                  <small class="text-uppercase me-3"><i class="bi bi-person me-2"></i>Admin</small>
+                  <small class="text-uppercase me-3"><i class="bi bi-bookmarks me-2"></i>Exhibition</small>
+                </div>
+                <h5 class="mb-3">Samuhik Kanya Vivah</h5>
+                <p class="text-muted">Successful exhibition showcasing local businesses and products, attracting thousands of visitors.</p>
+                <span class="text-primary">Read More →</span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Blog 6 -->
+        <div class="col-xl-6 col-lg-12 col-md-6 blog-item" data-category="Film" data-title="Chaturth Dikshant Divas">
+          <a href="detail.html?id=6" class="text-decoration-none">
+            <div class="blog-card h-100">
+              <div class="position-relative overflow-hidden blog-img-wrapper">
+                <img class="img-fluid" src="img/logo/image5.jpg.jpeg" alt="Film Production" />
+                <div class="category-badge">Film</div>
+                <div class="blog-date">
+                  <span class="d-block fw-bold text-primary">18</span>
+                  <small>OCT</small><br><small>2024</small>
+                </div>
+              </div>
+              <div class="blog-content bg-white">
+                <div class="d-flex mb-2">
+                  <small class="text-uppercase me-3"><i class="bi bi-person me-2"></i>Admin</small>
+                  <small class="text-uppercase me-3"><i class="bi bi-bookmarks me-2"></i>Film</small>
+                </div>
+                <h5 class="mb-3">Chaturth Dikshant Divas</h5>
+                <p class="text-muted">A corporate documentary capturing the essence of the company's journey, achievements, and future vision.</p>
+                <span class="text-primary">Read More →</span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Blog 7 -->
+        <div class="col-xl-6 col-lg-12 col-md-6 blog-item" data-category="Festival" data-title="Ganga Dharshan">
+          <a href="detail.html?id=7" class="text-decoration-none">
+            <div class="blog-card h-100">
+              <div class="position-relative overflow-hidden blog-img-wrapper">
+                <img class="img-fluid" src="img/logo/image6.jpg.jpeg" alt="Festival Event" />
+                <div class="category-badge">Festival</div>
+                <div class="blog-date">
+                  <span class="d-block fw-bold text-primary">25</span>
+                  <small>SEP</small><br><small>2024</small>
+                </div>
+              </div>
+              <div class="blog-content bg-white">
+                <div class="d-flex mb-2">
+                  <small class="text-uppercase me-3"><i class="bi bi-person me-2"></i>Admin</small>
+                  <small class="text-uppercase me-3"><i class="bi bi-bookmarks me-2"></i>Festival</small>
+                </div>
+                <h5 class="mb-3">Ganga Dharshan</h5>
+                <p class="text-muted">Spectacular event with cultural performances, fireworks and grand celebration.</p>
+                <span class="text-primary">Read More →</span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Blog 8 -->
+        <div class="col-xl-6 col-lg-12 col-md-6 blog-item" data-category="Conference" data-title="National Youth Leadership Conference">
+          <a href="detail.html?id=8" class="text-decoration-none">
+            <div class="blog-card h-100">
+              <div class="position-relative overflow-hidden blog-img-wrapper">
+                <img class="img-fluid" src="img/logo/image7.jpg.jpeg" alt="Conference" />
+                <div class="category-badge">Conference</div>
+                <div class="blog-date">
+                  <span class="d-block fw-bold text-primary">08</span>
+                  <small>AUG</small><br><small>2024</small>
+                </div>
+              </div>
+              <div class="blog-content bg-white">
+                <div class="d-flex mb-2">
+                  <small class="text-uppercase me-3"><i class="bi bi-person me-2"></i>Admin</small>
+                  <small class="text-uppercase me-3"><i class="bi bi-bookmarks me-2"></i>Conference</small>
+                </div>
+                <h5 class="mb-3">National Youth Leadership Conference 2024</h5>
+                <p class="text-muted">Successful 3-day conference with motivational speakers and interactive workshops.</p>
+                <span class="text-primary">Read More →</span>
+              </div>
+            </div>
+          </a>
+        </div>
+
       </div>
     </div>
+    <!-- Blog List End -->
+
+    <!-- Sidebar Start -->
+    <div class="col-lg-4">
+
+      <!-- Search Form -->
+      <div class="mb-5">
+        <div class="input-group">
+          <input type="text" id="searchInput" class="form-control p-3" placeholder="Search blogs..." />
+          <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
+        </div>
+      </div>
+
+      <!-- Categories -->
+      <div class="mb-5">
+        <h2 class="mb-4 text-primary fw-bold"><i class="bi bi-tags-fill me-2"></i>Categories</h2>
+        <div class="bg-white shadow-sm rounded-3 p-4 border" id="categoryList">
+          <a href="#" class="category-link d-flex align-items-center justify-content-between p-3 mb-2 rounded-3 active-filter" data-category="All">
+            <div class="d-flex align-items-center"><i class="bi bi-grid-fill text-primary me-3 fs-5"></i><span>All Events</span></div>
+            <span class="badge bg-primary rounded-pill">8</span>
+          </a>
+          <a href="#" class="category-link d-flex align-items-center justify-content-between p-3 mb-2 rounded-3" data-category="Wedding">
+            <div class="d-flex align-items-center"><i class="bi bi-heart-fill text-danger me-3 fs-5"></i><span>Wedding & Celebration</span></div>
+            <span class="badge bg-light text-dark rounded-pill">2</span>
+          </a>
+          <a href="#" class="category-link d-flex align-items-center justify-content-between p-3 mb-2 rounded-3" data-category="Corporate">
+            <div class="d-flex align-items-center"><i class="bi bi-briefcase-fill text-info me-3 fs-5"></i><span>Corporate Events</span></div>
+            <span class="badge bg-light text-dark rounded-pill">1</span>
+          </a>
+          <a href="#" class="category-link d-flex align-items-center justify-content-between p-3 mb-2 rounded-3" data-category="Rural">
+            <div class="d-flex align-items-center"><i class="bi bi-tree-fill text-success me-3 fs-5"></i><span>Rural Marketing</span></div>
+            <span class="badge bg-light text-dark rounded-pill">1</span>
+          </a>
+          <a href="#" class="category-link d-flex align-items-center justify-content-between p-3 mb-2 rounded-3" data-category="Experiential">
+            <div class="d-flex align-items-center"><i class="bi bi-lightbulb-fill text-warning me-3 fs-5"></i><span>Experiential Marketing</span></div>
+            <span class="badge bg-light text-dark rounded-pill">1</span>
+          </a>
+          <a href="#" class="category-link d-flex align-items-center justify-content-between p-3 mb-2 rounded-3" data-category="Exhibition">
+            <div class="d-flex align-items-center"><i class="bi bi-easel-fill text-purple me-3 fs-5"></i><span>Exhibitions</span></div>
+            <span class="badge bg-light text-dark rounded-pill">1</span>
+          </a>
+          <a href="#" class="category-link d-flex align-items-center justify-content-between p-3 mb-2 rounded-3" data-category="Film">
+            <div class="d-flex align-items-center"><i class="bi bi-camera-reels-fill text-danger me-3 fs-5"></i><span>Film Production</span></div>
+            <span class="badge bg-light text-dark rounded-pill">1</span>
+          </a>
+          <a href="#" class="category-link d-flex align-items-center justify-content-between p-3 rounded-3" data-category="Festival">
+            <div class="d-flex align-items-center"><i class="bi bi-fireworks-fill text-orange me-3 fs-5"></i><span>Festival & Cultural</span></div>
+            <span class="badge bg-light text-dark rounded-pill">1</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Recent Post -->
+      <div class="mb-5">
+        <h2 class="mb-4">Recent Post</h2>
+        <div class="d-flex mb-3">
+          <img class="img-fluid" src="img/logo/abandkar.jpg.jpeg" style="width: 100px; height: 100px; object-fit: cover" alt="" />
+          <a href="detail.html?id=3" class="h5 d-flex align-items-center bg-secondary px-3 mb-0">Dr. Ambedkar Jayanti Celebration</a>
+        </div>
+        <div class="d-flex mb-3">
+          <img class="img-fluid" src="img/logo/gangadharshan.jpg.jpeg" style="width: 100px; height: 100px; object-fit: cover" alt="" />
+          <a href="detail.html?id=4" class="h5 d-flex align-items-center bg-secondary px-3 mb-0">Ganga Dharshan</a>
+        </div>
+        <div class="d-flex">
+          <img class="img-fluid" src="img/logo/image3.jpg.jpeg" style="width: 100px; height: 100px; object-fit: cover" alt="" />
+          <a href="detail.html?id=5" class="h5 d-flex align-items-center bg-secondary px-3 mb-0">Samuhik Kanya Vivah</a>
+        </div>
+      </div>
+
+      <div class="mb-5">
+        <img src="img/logo/ladli bhena.jpeg" alt="" class="img-fluid" />
+      </div>
+
+      <!-- Tag Cloud -->
+      <div class="mb-5">
+        <h2 class="mb-4">Tag Cloud</h2>
+        <div class="d-flex flex-wrap m-n1">
+          <a href="#" class="btn btn-secondary m-1">Wedding</a>
+          <a href="#" class="btn btn-secondary m-1">Corporate</a>
+          <a href="#" class="btn btn-secondary m-1">Rural</a>
+          <a href="#" class="btn btn-secondary m-1">Experiential</a>
+          <a href="#" class="btn btn-secondary m-1">Exhibition</a>
+          <a href="#" class="btn btn-secondary m-1">Film</a>
+        </div>
+      </div>
+
+    </div>
+    <!-- Sidebar End -->
+
+  </div>
+</div>
+<!-- Blog End -->
+      <!-- Sidebar End -->
+
+    </div>
+  </div>
     <!-- Blog End -->
 
    <div class="container-fluid bg-dark text-secondary p-5 px-sm-3 px-lg-5">
