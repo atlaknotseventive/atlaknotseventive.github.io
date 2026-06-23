@@ -107,53 +107,136 @@
 
 
     <!-- Quote Start -->
-    <div class="container-fluid bg-secondary px-0">
-        <div class="row g-0">
-            <div class="col-lg-6 py-6 px-5">
-                <h1 class="display-5 mb-4">Request A Free Quote</h1>
-                <p class="mb-4">Kasd vero erat ea amet justo no stet, et elitr no dolore no elitr sea kasd et dolor diam tempor. Nonumy sed dolore no eirmod sit nonumy vero lorem amet stet diam at. Ea at lorem sed et, lorem et rebum ut eirmod gubergren, dolor ea duo diam justo dolor diam ipsum dolore stet stet elitr ut. Ipsum amet labore lorem lorem diam magna sea, eos sed dolore elitr.</p>
-                <form>
-                    <div class="row gx-3">
-                        <div class="col-6">
-                            <div class="form-floating">
-                                <input type="text" class="form-control" id="form-floating-1" placeholder="John Doe">
-                                <label for="form-floating-1">Full Name</label>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-floating mb-3">
-                                <input type="email" class="form-control" id="form-floating-2" placeholder="name@example.com">
-                                <label for="form-floating-2">Email address</label>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-floating">
-                                <select class="form-select" id="floatingSelect" aria-label="Financial Consultancy">
-                                    <option selected>Financial Consultancy</option>
-                                    <option value="1">Strategy Consultancy</option>
-                                    <option value="2">Tax Consultancy</option>
-                                </select>
-                                <label for="floatingSelect">Select A Service</label>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <button class="btn btn-primary w-100 h-100" type="submit">Request A Quote</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="col-lg-6" style="min-height: 400px;">
-                <div class="position-relative h-100">
-                    <img class="position-absolute w-100 h-100" src="img/quote.jpg" style="object-fit: cover;">
+       <div class="container-fluid bg-secondary px-0">
+    <div class="row g-0">
+        <!-- Left Side - Form -->
+        <div class="col-lg-6 py-6 px-5">
+            <h1 class="display-5 mb-4">Request A Free Quote</h1>
+            <p class="mb-4">Event management services tailored to your needs.</p>
+            
+            <div class="container py-5">
+    <form id="form" class="mx-auto" style="max-width: 600px;">
+        <div class="row gx-3 flex-row d-flex justify-content-center">
+
+            <!-- Full Name -->
+            <div class="col-md-6 mb-3">
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="John Doe" required>
+                    <label for="name">Full Name</label>
                 </div>
+            </div>
+
+            <!-- Email -->
+            <div class="col-md-6 mb-3">
+                <div class="form-floating">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
+                    <label for="email">Email Address</label>
+                </div>
+            </div>
+
+            <!-- Phone -->
+            <div class="col-md-6 mb-3">
+                <div class="form-floating">
+                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="+91 98765 43210" required>
+                    <label for="phone">Phone Number</label>
+                </div>
+            </div>
+
+            <!-- Service Selection -->
+            <div class="col-md-6 mb-3">
+                <div class="form-floating">
+                    <select class="form-select" id="service" name="service" aria-label="Select Service" required>
+                        <option value="" disabled selected>Select a Service...</option>
+                        <option value="Event and Entertainment">Event and Entertainment</option>
+                        <option value="Rural Marketing and Communication">Rural Marketing and Communication</option>
+                        <option value="Experiential Marketing">Experiential Marketing</option>
+                        <option value="Developmental Communication">Developmental Communication</option>
+                        <option value="Exhibitions">Exhibitions</option>
+                        <option value="Conferences">Conferences</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <label for="service">Select A Service</label>
+                </div>
+            </div>
+
+            <!-- Message -->
+            <div class="col-12 mb-3">
+                <div class="form-floating">
+                    <textarea class="form-control" id="message" name="message" placeholder="I want service for ..." style="height: 120px;" required></textarea>
+                    <label for="message">Message / Requirements</label>
+                </div>
+            </div>
+
+            <!-- Submit -->
+            <div class="col-12">
+                <button class="btn btn-primary w-100 py-3" type="submit">
+                    Request A Quote
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<!-- Web3Forms Script -->
+<script>
+    const form = document.getElementById('form');
+    const submitBtn = form.querySelector('button[type="submit"]');
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+        formData.append("access_key", "d12e6d1b-ffd3-464d-8b23-9cb83cc3ad1b");
+
+        // Optional: Add subject for better email
+        formData.append("subject", "New Quote Request");
+        formData.append("from_name", "Website Contact Form");
+
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = "Sending...";
+        submitBtn.disabled = true;
+
+        try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                alert("✅ Success! Your quote request has been sent.");
+                form.reset();
+            } else {
+                alert("❌ Error: " + (data.message || "Please try again."));
+            }
+        } catch (error) {
+            alert("❌ Something went wrong. Please try again later.");
+        } finally {
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        }
+    });
+</script>
+        </div>
+
+        <!-- Right Side - Image with Animation -->
+        <div class="col-lg-5" style="min-height: 200px; margin-top: 50px; margin-bottom: 50px; ">
+            <div class="position-relative h-100 overflow-hidden">
+                <img 
+                    class="position-absolute w-auto h-auto image-zoom" 
+                    src="img/logo/andhata.jpeg" 
+                    alt="Andhata Event Management"
+                    style="object-fit: cover;">
             </div>
         </div>
     </div>
+</div>
     <!-- Quote End -->
     
 
     <!-- Footer Start -->
-   <div class="container-fluid bg-dark text-secondary p-5 px-sm-3 px-lg-5">
+  <div class="container-fluid bg-dark text-secondary p-5 px-sm-3 px-lg-5">
         <div class="row g-5">
             <div class="col-lg-3 col-md-6">
                 <h3 class="text-white mb-4">Quick Links</h3>
@@ -175,20 +258,43 @@
                     <a class="text-secondary" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6">
-                <h3 class="text-white mb-4">Get In Touch</h3>
-                <p class="mb-2"><i class="bi bi-geo-alt text-primary me-2"></i>Goyal vihar apartment, Zone-II, Maharana Pratap Nagar, Bhopal, Madhya Pradesh 462011</p>
-                <p class="mb-2"><i class="bi bi-envelope-open text-primary me-2"></i>mailus@akeventive.com</p>
-                <p class="mb-0"><i class="bi bi-telephone text-primary me-2"></i>+91-91 9911556070, +91-7489476616</p>
-            </div>
+          <div class="col-lg-3 col-md-6">
+    <h3 class="text-white mb-4">Get In Touch</h3>
+
+    <p class="mb-2">
+        <i class="bi bi-geo-alt text-primary me-2"></i>
+        <a href="https://maps.google.com/?q=Goyal+Vihar+Apartment+Zone-II+Maharana+Pratap+Nagar+Bhopal+Madhya+Pradesh+462011"
+           target="_blank"
+           class="text-decoration-none text-white">
+            Goyal Vihar Apartment, Zone-II, Maharana Pratap Nagar, Bhopal, Madhya Pradesh 462011
+        </a>
+    </p>
+
+    <p class="mb-2">
+        <i class="bi bi-envelope-open text-primary me-2"></i>
+        <a href="mailto:mailus@akeventive.com" class="text-white">
+            mailus@akeventive.com
+        </a>
+    </p>
+
+    <p class="mb-0">
+        <i class="bi bi-telephone text-primary me-2"></i>
+        <a href="tel:+919911556070" class="text-white">+91-9911556070</a>,
+        <a href="tel:+917489476616" class="text-white">+91-7489476616</a>
+    </p>
+</div>
             <div class="col-lg-3 col-md-6">
                 <h3 class="text-white mb-4">Follow Us</h3>
                 <div class="d-flex">
-                    <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="https://x.com/AKEventive?t=IbPbXKBe7FyrYY1cG4PMDA&s=01"><i class="fab fa-twitter fw-normal"></i></a>
-                    <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href=" https://www.facebook.com/profile.php?id=61555840487073&mibextid=ZbWKwL"><i class="fab fa-facebook-f fw-normal"></i></a>
-                    <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="https://www.linkedin.com/in/atlaknots-eventive-129ba02b2"><i class="fab fa-linkedin-in fw-normal"></i></a>
-                    <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="https://www.instagram.com/atlaknotseventive/"><i class="fab fa-instagram fw-normal"></i></a> 
-                    <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="https://wa.me/91 9911556070?text="><i class="bi bi-whatsapp fw-normal"></i></a>
+                    <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="https://in.pinterest.com/atlaknotseventive/"><i class="fab fa-pinterest fw-normal"></i></a>
+                    <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="https://www.facebook.com/people/Atla-Knots-Eventive/61582986326755/"><i class="fab fa-facebook-f fw-normal"></i></a>
+                    <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="https://www.linkedin.com/company/atlaknots-eventive/?viewAsMember=true"><i class="fab fa-linkedin-in fw-normal"></i></a>
+                    <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="https://www.instagram.com/atla.knots/"><i class="fab fa-instagram fw-normal"></i></a> 
+    <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2"
+   href="https://wa.me/919911556070?text=Hello%20Sir%2C%0A%0AI%20would%20like%20to%20inquire%20about%20your%20event%20planning%20services.%20Please%20share%20your%20packages%20and%20availability.%0A%0AThank%20you%21"
+   target="_blank">
+   <i class="bi bi-whatsapp fw-normal"></i>
+</a>
                 </div>
             </div>
         </div>
