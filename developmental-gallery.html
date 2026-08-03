@@ -36,25 +36,33 @@
     <link href="css/style.css" rel="stylesheet" />
 
     <style>
+      /* ===== Gallery Card Styles ===== */
       .gallery-card {
-        transition: all 0.4s ease;
-        border-radius: 12px;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        border-radius: 14px;
         overflow: hidden;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        background: #fff;
+        height: 100%;
       }
       .gallery-card:hover {
-        transform: scale(1.05);
-        box-shadow:
-          0 20px 25px -5px rgb(0 0 0 / 0.15),
-          0 8px 10px -6px rgb(0 0 0 / 0.15);
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
       }
       .gallery-card img {
         height: 240px;
         object-fit: cover;
+        transition: transform 0.5s ease;
       }
+      .gallery-card:hover img {
+        transform: scale(1.08);
+      }
+
+      /* ===== Section Title ===== */
       .section-title {
         position: relative;
         display: inline-block;
+        font-weight: 700;
       }
       .section-title:after {
         content: "";
@@ -65,9 +73,111 @@
         bottom: -10px;
         left: 0;
       }
+
+      /* ===== Modal ===== */
       .modal-content {
         border-radius: 16px;
         overflow: hidden;
+        border: none;
+      }
+
+      /* ===== Animation - Fade In Up ===== */
+      .fade-in-up {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+      .fade-in-up.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* ===== Pagination Styles ===== */
+      .pagination-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        margin-top: 40px;
+        flex-wrap: wrap;
+      }
+      .page-btn {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        border: 2px solid #dc2626;
+        background: transparent;
+        color: #dc2626;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .page-btn:hover,
+      .page-btn.active {
+        background: #dc2626;
+        color: #fff;
+        transform: scale(1.1);
+      }
+      .page-btn:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+        transform: none;
+      }
+      .page-btn.prev-next {
+        width: auto;
+        padding: 0 18px;
+        border-radius: 25px;
+      }
+
+      /* ===== Page Header with Background Image ===== */
+      .page-header {
+        background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+                    url('img/carousel-1.jpg') center center / cover no-repeat;
+        color: #fff !important;
+        position: relative;
+      }
+      .page-header h1,
+      .page-header p {
+        color: #fff !important;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+      }
+      .page-header .lead {
+        font-weight: 500;
+      }
+
+      /* ===== Mobile Responsive ===== */
+      @media (max-width: 767.98px) {
+        .gallery-card img {
+          height: 200px;
+        }
+        .page-header h1 {
+          font-size: 1.8rem;
+        }
+        .section-title {
+          font-size: 1.5rem;
+        }
+        .navbar-brand img {
+          height: 70px !important;
+          width: 70px !important;
+        }
+        .page-header {
+          background-position: center top;
+        }
+      }
+
+      @media (max-width: 575.98px) {
+        .gallery-card img {
+          height: 180px;
+        }
+        .card-body {
+          padding: 1rem !important;
+        }
+        .card-title {
+          font-size: 1rem;
+        }
       }
     </style>
   </head>
@@ -78,25 +188,15 @@
       <div class="row gx-0">
         <div class="col-md-6 text-center text-lg-start mb-2 mb-lg-0">
           <div class="d-inline-flex align-items-center">
-            <a class="text-body py-2 pe-3 border-end" href="#"
-              ><small>FAQs</small></a
-            >
-            <a class="text-body py-2 px-3 border-end" href="#"
-              ><small>Support</small></a
-            >
-            <a class="text-body py-2 px-3 border-end" href="#"
-              ><small>Privacy</small></a
-            >
-            <a class="text-body py-2 px-3 border-end" href="#"
-              ><small>Policy</small></a
-            >
+            <a class="text-body py-2 pe-3 border-end" href="#"><small>FAQs</small></a>
+            <a class="text-body py-2 px-3 border-end" href="#"><small>Support</small></a>
+            <a class="text-body py-2 px-3 border-end" href="#"><small>Privacy</small></a>
+            <a class="text-body py-2 px-3 border-end" href="#"><small>Policy</small></a>
             <a class="text-body py-2 ps-3" href="#"><small>Career</small></a>
           </div>
         </div>
         <div class="col-md-6 text-center text-lg-end">
-          <div
-            class="position-relative d-inline-flex align-items-center bg-primary text-white top-shape px-5"
-          >
+          <div class="position-relative d-inline-flex align-items-center bg-primary text-white top-shape px-5">
             <div class="me-3 pe-3 border-end py-2">
               <p class="m-0">
                 <i class="fa fa-envelope-open me-2"></i>mailus@akeventive.com
@@ -104,8 +204,7 @@
             </div>
             <div class="py-2">
               <p class="m-0">
-                <i class="fa fa-phone-alt me-2"></i>+91-9911556070,
-                +91-7489476616
+                <i class="fa fa-phone-alt me-2"></i>+91-9911556070, +91-7489476616
               </p>
             </div>
           </div>
@@ -115,17 +214,10 @@
     <!-- Topbar End -->
 
     <!-- Navbar Start -->
-    <nav
-      class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-3 py-lg-0"
-    >
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-3 py-lg-0">
       <a href="index.html" class="navbar-brand p-0">
         <h1 class="m-0 text-uppercase text-primary">
-          <img
-            src="img/logo/eventive logo.png"
-            alt="Logo"
-            height="100px"
-            width="100px"
-          />
+          <img src="img/logo/eventive logo.png" alt="Logo" height="100px" width="100px" />
         </h1>
       </a>
       <button
@@ -142,12 +234,7 @@
           <a href="about.html" class="nav-item nav-link">About</a>
           <a href="service.html" class="nav-item nav-link">Service</a>
           <div class="nav-item dropdown">
-            <a
-              href="#"
-              class="nav-link dropdown-toggle"
-              data-bs-toggle="dropdown"
-              >Pages</a
-            >
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
             <div class="dropdown-menu m-0">
               <a href="blog.html" class="dropdown-item">Blog Grid</a>
               <a href="detail.html" class="dropdown-item">Blog Detail</a>
@@ -161,17 +248,14 @@
     </nav>
     <!-- Navbar End -->
 
-    <div class="container-fluid bg-gray py-5 mb-5 page-header">
+    <!-- Page Header with Background Image -->
+    <div class="container-fluid py-5 mb-5 page-header">
       <div class="container py-5">
-        <div class="row justify-content-center">
-          <h1>Developmental Events</h1>
-          <p>Welcome to our developmental events gallery!</p>
-          <p>
-            Explore the vibrant and diverse developmental events we have
-            organized, showcasing the rich cultural heritage and community
-            spirit of rural areas. From traditional festivals to local
-            gatherings, our gallery captures the essence of rural life and the
-            joy of coming together as a community.
+        <div class="row justify-content-center text-center">
+          <h1 class="mb-3">Developmental Events</h1>
+          <p class="lead mb-2">Welcome to our developmental events gallery!</p>
+          <p class="col-lg-8 mx-auto">
+            Explore the vibrant and diverse developmental events we have organized, showcasing the rich cultural heritage and community spirit of rural areas. From traditional festivals to local gatherings, our gallery captures the essence of rural life and the joy of coming together as a community.
           </p>
         </div>
       </div>
@@ -180,297 +264,278 @@
     <!-- Gallery Section -->
     <div class="container-fluid py-5">
       <div class="container">
-        <!-- Developmental Events -->
         <div class="mb-5">
-          <h2 class="section-title text-4xl font-bold text-red-600 mb-4">
-            Developmental Events
-          </h2>
+          <h2 class="section-title mb-5">Developmental Events</h2>
 
-          <script>
-function showImage(element) {
-  const imgSrc = element.querySelector('img').src;
-  document.getElementById('modalImage').src = imgSrc;
-}
-</script>
-
-
-         <div class="container-fluid py-5">
-  <div class="container">
-    <!-- Conferences -->
-    <div class="mb-5">
-      
-      
-      <div class="row g-4" id="conferences">
-
-        <!-- Conference 1 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="card h-100 shadow-sm border-0 overflow-hidden">
-            <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal" 
-               onclick="showImage(this)">
-              <img
-                src="/img/logo/exhibition2.jpg.jpeg"
-                class="card-img-top"
-                alt="Conference"
-                style="height: 240px; object-fit: cover; cursor: pointer;"
-              />
-            </a>
-            
-            <div class="card-body">
-              <h5 class="card-title fw-bold text-success">
-                Village Mela (Fair)
-              </h5>
-              <p class="card-text text-muted small">
-                Annual rural fair with local handicrafts, folk music, and
-                traditional sweets. A perfect blend of culture and joy.
-              </p>
-              <div class="d-flex justify-content-between align-items-center">
-                <small class="text-muted">📍 Rajasthan • 15 Aug 2025</small>
-              </div>
-            </div>
+          <!-- Gallery Grid -->
+          <div class="row g-4" id="gallery-container">
+            <!-- Cards will be rendered here by JavaScript -->
           </div>
-        </div>
 
-        <!-- Add more conferences here by copying the block above -->
-
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ====================== Image Modal (Add only once on the page) ====================== -->
-<div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content">
-      <div class="modal-header border-0">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body p-0 text-center">
-        <img id="modalImage" src="" class="img-fluid" alt="Event Image" style="max-height: 85vh; width: auto;">
-      </div>
-    </div>
-  </div>
-</div>
+          <!-- Pagination -->
+          <div class="pagination-wrapper" id="pagination"></div>
         </div>
       </div>
     </div>
 
     <!-- Image Modal -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header border-0 pb-0">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body p-0">
+            <img
+              id="modalImage"
+              src=""
+              class="img-fluid w-100"
+              alt="Event Image"
+              style="max-height: 70vh; object-fit: contain"
+            />
+            <div class="p-4 text-start">
+              <h4 id="modalTitle" class="fw-bold text-success mb-2"></h4>
+              <p id="modalDescription" class="text-muted mb-0"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Footer Start -->
-     <div class="container-fluid bg-dark text-secondary p-5 px-sm-3 px-lg-5">
-        <div class="row g-5">
-            <div class="col-lg-3 col-md-6">
-                <h3 class="text-white mb-4">Quick Links</h3>
-                <div class="d-flex flex-column justify-content-start">
-                    <a class="text-secondary mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
-                    <a class="text-secondary mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
-                    <a class="text-secondary mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Our Services</a>
-                    <a class="text-secondary mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Latest Blog Post</a>
-                    <a class="text-secondary" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <h3 class="text-white mb-4">Popular Links</h3>
-                <div class="d-flex flex-column justify-content-start">
-                    <a class="text-secondary mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
-                    <a class="text-secondary mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
-                    <a class="text-secondary mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Our Services</a>
-                    <a class="text-secondary mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Latest Blog Post</a>
-                    <a class="text-secondary" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>
-                </div>
-            </div>
-          <div class="col-lg-3 col-md-6">
-    <h3 class="text-white mb-4">Get In Touch</h3>
-
-    <p class="mb-2">
-        <i class="bi bi-geo-alt text-primary me-2"></i>
-        <a href="https://maps.google.com/?q=Goyal+Vihar+Apartment+Zone-II+Maharana+Pratap+Nagar+Bhopal+Madhya+Pradesh+462011"
-           target="_blank"
-           class="text-decoration-none text-white">
-            Goyal Vihar Apartment, Zone-II, Maharana Pratap Nagar, Bhopal, Madhya Pradesh 462011
-        </a>
-    </p>
-
-    <p class="mb-2">
-        <i class="bi bi-envelope-open text-primary me-2"></i>
-        <a href="mailto:mailus@akeventive.com" class="text-white">
-            mailus@akeventive.com
-        </a>
-    </p>
-
-    <p class="mb-0">
-        <i class="bi bi-telephone text-primary me-2"></i>
-        <a href="tel:+919911556070" class="text-white">+91-9911556070</a>,
-        <a href="tel:+917489476616" class="text-white">+91-7489476616</a>
-    </p>
-</div>
-            <div class="col-lg-3 col-md-6">
-                <h3 class="text-white mb-4">Follow Us</h3>
-                <div class="d-flex">
-                    <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="https://in.pinterest.com/atlaknotseventive/"><i class="fab fa-pinterest fw-normal"></i></a>
-                    <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="https://www.facebook.com/people/Atla-Knots-Eventive/61582986326755/"><i class="fab fa-facebook-f fw-normal"></i></a>
-                    <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="https://www.linkedin.com/company/atlaknots-eventive/?viewAsMember=true"><i class="fab fa-linkedin-in fw-normal"></i></a>
-                    <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="https://www.instagram.com/atla.knots/"><i class="fab fa-instagram fw-normal"></i></a> 
-    <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2"
-   href="https://wa.me/919911556070?text=Hello%20Sir%2C%0A%0AI%20would%20like%20to%20inquire%20about%20your%20event%20planning%20services.%20Please%20share%20your%20packages%20and%20availability.%0A%0AThank%20you%21"
-   target="_blank">
-   <i class="bi bi-whatsapp fw-normal"></i>
-</a>
-                </div>
-            </div>
+    <div class="container-fluid bg-dark text-secondary p-5 px-sm-3 px-lg-5">
+      <div class="row g-5">
+        <div class="col-lg-3 col-md-6">
+          <h3 class="text-white mb-4">Quick Links</h3>
+          <div class="d-flex flex-column justify-content-start">
+            <a class="text-secondary mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
+            <a class="text-secondary mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
+            <a class="text-secondary mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Our Services</a>
+            <a class="text-secondary mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Latest Blog Post</a>
+            <a class="text-secondary" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>
+          </div>
         </div>
+        <div class="col-lg-3 col-md-6">
+          <h3 class="text-white mb-4">Popular Links</h3>
+          <div class="d-flex flex-column justify-content-start">
+            <a class="text-secondary mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
+            <a class="text-secondary mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
+            <a class="text-secondary mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Our Services</a>
+            <a class="text-secondary mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Latest Blog Post</a>
+            <a class="text-secondary" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h3 class="text-white mb-4">Get In Touch</h3>
+          <p class="mb-2">
+            <i class="bi bi-geo-alt text-primary me-2"></i>
+            <a
+              href="https://maps.google.com/?q=Goyal+Vihar+Apartment+Zone-II+Maharana+Pratap+Nagar+Bhopal+Madhya+Pradesh+462011"
+              target="_blank"
+              class="text-decoration-none text-white"
+            >
+              Goyal Vihar Apartment, Zone-II, Maharana Pratap Nagar, Bhopal, Madhya Pradesh 462011
+            </a>
+          </p>
+          <p class="mb-2">
+            <i class="bi bi-envelope-open text-primary me-2"></i>
+            <a href="mailto:mailus@akeventive.com" class="text-white">mailus@akeventive.com</a>
+          </p>
+          <p class="mb-0">
+            <i class="bi bi-telephone text-primary me-2"></i>
+            <a href="tel:+919911556070" class="text-white">+91-9911556070</a>,
+            <a href="tel:+917489476616" class="text-white">+91-7489476616</a>
+          </p>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h3 class="text-white mb-4">Follow Us</h3>
+          <div class="d-flex flex-wrap gap-2">
+            <a class="btn btn-lg btn-primary btn-lg-square rounded-circle" href="https://in.pinterest.com/atlaknotseventive/">
+              <i class="fab fa-pinterest fw-normal"></i>
+            </a>
+            <a class="btn btn-lg btn-primary btn-lg-square rounded-circle" href="https://www.facebook.com/people/Atla-Knots-Eventive/61582986326755/">
+              <i class="fab fa-facebook-f fw-normal"></i>
+            </a>
+            <a class="btn btn-lg btn-primary btn-lg-square rounded-circle" href="https://www.linkedin.com/company/atlaknots-eventive/?viewAsMember=true">
+              <i class="fab fa-linkedin-in fw-normal"></i>
+            </a>
+            <a class="btn btn-lg btn-primary btn-lg-square rounded-circle" href="https://www.instagram.com/atla.knots/">
+              <i class="fab fa-instagram fw-normal"></i>
+            </a>
+            <a
+              class="btn btn-lg btn-primary btn-lg-square rounded-circle"
+              href="https://wa.me/919911556070?text=Hello%20Sir%2C%0A%0AI%20would%20like%20to%20inquire%20about%20your%20event%20planning%20services.%20Please%20share%20your%20packages%20and%20availability.%0A%0AThank%20you%21"
+              target="_blank"
+            >
+              <i class="bi bi-whatsapp fw-normal"></i>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="container-fluid bg-dark text-secondary text-center border-top py-4 px-5" style="border-color: rgba(256, 256, 256, .1) !important;">
-        <p class="m-0">&copy; <a class="text-secondary border-bottom" href="https://aiknotsit.com">AI Knots IT Solution.com</a>. All Rights Reserved. Designed by <a class="text-secondary border-bottom" href="samudd246@gmail.com">Sameer</a></p>
+    <div
+      class="container-fluid bg-dark text-secondary text-center border-top py-4 px-5"
+      style="border-color: rgba(256, 256, 256, 0.1) !important"
+    >
+      <p class="m-0">
+        &copy;
+        <a class="text-secondary border-bottom" href="https://aiknotsit.com">AI Knots IT Solution.com</a>.
+        All Rights Reserved. Designed by
+        <a class="text-secondary border-bottom" href="mailto:samudd246@gmail.com">Sameer</a>
+      </p>
     </div>
     <!-- Footer End -->
 
     <script>
-      const events = {
-        pm: [
-          {
-            title: "10th Vishwa Hindi Sammelan",
-            desc: "Grand stage setup with floral decoration",
-            img: "https://picsum.photos/id/1015/800/600",
-          },
-          {
-            title: "Vichar Maha Kumbh",
-            desc: "Night event with beautiful lighting and fountain show",
-            img: "https://picsum.photos/id/133/800/600",
-          },
-          {
-            title: "Singaji Power Plant",
-            desc: "Large auditorium setup with red chairs",
-            img: "https://picsum.photos/id/201/800/600",
-          },
-          {
-            title: "SAIL Power Plant",
-            desc: "Inauguration ceremony with dignitaries",
-            img: "https://picsum.photos/id/237/800/600",
-          },
-          {
-            title: "PM Visit - Bhopal",
-            desc: "Massive public gathering with stage",
-            img: "https://picsum.photos/id/870/800/600",
-          },
-          {
-            title: "National Education Day",
-            desc: "Beautiful cultural stage arrangement",
-            img: "https://picsum.photos/id/1018/800/600",
-          },
-        ],
-        gov: [
-          {
-            title: "Gyan Parv",
-            desc: "Cultural installation with globe and statue",
-            img: "https://picsum.photos/id/251/800/600",
-          },
-          {
-            title: "Atal Jyoti Abhiyan",
-            desc: "Grand stage with audience and dignitaries",
-            img: "https://picsum.photos/id/314/800/600",
-          },
-          {
-            title: "Beti Bachao Beti Padhao",
-            desc: "Ceremony with women and children in traditional attire",
-            img: "https://picsum.photos/id/64/800/600",
-          },
-          {
-            title: "Large Public Gathering",
-            desc: "Massive tent setup with stage and crowd",
-            img: "https://picsum.photos/id/870/800/600",
-          },
-          {
-            title: "Swachh Bharat Abhiyan",
-            desc: "Cleanliness drive event",
-            img: "https://picsum.photos/id/201/800/600",
-          },
-          {
-            title: "Republic Day Celebration",
-            desc: "State-level grand celebration",
-            img: "https://picsum.photos/id/133/800/600",
-          },
-        ],
-        rural: [
-          {
-            title: "Gram Panchayat Mahotsav",
-            desc: "Village fair with traditional folk dance and local art exhibition",
-            img: "https://picsum.photos/id/1016/800/600",
-          },
-          {
-            title: "Kisan Mela & Krishi Mahotsav",
-            desc: "Large agricultural fair with farmer gatherings and machinery display",
-            img: "https://picsum.photos/id/133/800/600",
-          },
-          {
-            title: "Rural Women Empowerment Camp",
-            desc: "Self-help group event with cultural program and award ceremony",
-            img: "https://picsum.photos/id/64/800/600",
-          },
-          {
-            title: "Village Cleanliness Drive",
-            desc: "Swachh Gram Abhiyan with community participation",
-            img: "https://picsum.photos/id/201/800/600",
-          },
-          {
-            title: "Rural Sports & Cultural Festival",
-            desc: "Kabaddi, wrestling and traditional folk performances",
-            img: "https://picsum.photos/id/251/800/600",
-          },
-          {
-            title: "Harvest Festival Celebration",
-            desc: "Bumper crop celebration with bullock cart race and village fair",
-            img: "https://picsum.photos/id/314/800/600",
-          },
-        ],
-      };
+      // ====================== EVENT DATA ======================
+      const events = [
+        {
+          title: "Rewa Rural Development Fair",
+          description: "Annual rural fair with local handicrafts, folk music, and traditional sweets. A perfect blend of culture and joy.",
+          image: "img/image_event3.jpeg",
+          location: "Rajasthan",
+          date: "15 Aug 2025"
+        },
+        {
+          title: "Grih Pravesh",
+          description: "Prime Minister Narendra Modi inaugurated and laid the foundation stone for multiple development projects worth around ₹19,000 crore in Gwalior.",
+          image: "img/event_image5.jpeg",
+          location: "Gwalior",
+          date: "2 Oct 2025"
+        },
 
-      function createCard(event) {
-        const div = document.createElement("div");
-        div.className = "col-lg-3 col-md-6 col-sm-12";
-        div.innerHTML = `
-                <div class="gallery-card h-100 bg-white cursor-pointer" onclick="showImage('${event.title}', '${event.desc}', '${event.img}')">
-                    <img src="${event.img}" class="w-100" alt="${event.title}">
-                    <div class="p-4">
-                        <h5 class="mb-2">${event.title}</h5>
-                        <p class="text-muted small mb-0">${event.desc}</p>
-                    </div>
+         {
+          title: "Metro Rail Inauguration",
+          description: "Prime Minister Narendra Modi inaugurated the Bhopal Metro Rail project, marking a significant step in urban development and public transportation.",
+          image: "img/event_image7.jpeg",
+          location: "Bhopal",
+          date: "20 Dec 2025"
+        },
+        // Add more events here
+      ];
+
+      // ====================== PAGINATION SETTINGS ======================
+      const itemsPerPage = 6;
+      let currentPage = 1;
+
+      // ====================== RENDER GALLERY ======================
+      function renderGallery() {
+        const container = document.getElementById("gallery-container");
+        container.innerHTML = "";
+
+        const start = (currentPage - 1) * itemsPerPage;
+        const end = start + itemsPerPage;
+        const pageItems = events.slice(start, end);
+
+        pageItems.forEach((event, index) => {
+          const col = document.createElement("div");
+          col.className = "col-sm-6 col-lg-4 fade-in-up";
+          col.style.transitionDelay = `${index * 0.1}s`;
+
+          col.innerHTML = `
+            <div class="card h-100 shadow-sm border-0 overflow-hidden gallery-card">
+              <a href="javascript:void(0)"
+                 onclick="showImage(this)"
+                 data-title="${event.title}"
+                 data-description="${event.description}">
+                <img src="${event.image}"
+                     class="card-img-top"
+                     alt="${event.title}"
+                     style="height: 240px; object-fit: cover; cursor: pointer;" />
+              </a>
+              <div class="card-body">
+                <h5 class="card-title fw-bold text-success">${event.title}</h5>
+                <p class="card-text text-muted small">${event.description}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <small class="text-muted">📍 ${event.location} • ${event.date}</small>
                 </div>
-            `;
-        return div;
+              </div>
+            </div>
+          `;
+          container.appendChild(col);
+
+          setTimeout(() => {
+            col.classList.add("visible");
+          }, 50);
+        });
+
+        renderPagination();
       }
 
-      function populateEvents() {
-        const pmContainer = document.getElementById("pm-events");
-        const govContainer = document.getElementById("gov-events");
-        const ruralContainer = document.getElementById("rural-events");
+      // ====================== RENDER PAGINATION ======================
+      function renderPagination() {
+        const totalPages = Math.ceil(events.length / itemsPerPage);
+        const pagination = document.getElementById("pagination");
+        pagination.innerHTML = "";
 
-        events.pm.forEach((event) =>
-          pmContainer.appendChild(createCard(event)),
-        );
-        events.gov.forEach((event) =>
-          govContainer.appendChild(createCard(event)),
-        );
-        events.rural.forEach((event) =>
-          ruralContainer.appendChild(createCard(event)),
-        );
+        if (totalPages <= 1) return;
+
+        // Previous Button
+        const prevBtn = document.createElement("button");
+        prevBtn.className = "page-btn prev-next";
+        prevBtn.innerHTML = `<i class="fas fa-chevron-left me-1"></i> Prev`;
+        prevBtn.disabled = currentPage === 1;
+        prevBtn.onclick = () => {
+          if (currentPage > 1) {
+            currentPage--;
+            renderGallery();
+            window.scrollTo({ top: document.querySelector(".section-title").offsetTop - 100, behavior: "smooth" });
+          }
+        };
+        pagination.appendChild(prevBtn);
+
+        // Page Numbers
+        for (let i = 1; i <= totalPages; i++) {
+          const btn = document.createElement("button");
+          btn.className = `page-btn ${i === currentPage ? "active" : ""}`;
+          btn.textContent = i;
+          btn.onclick = () => {
+            currentPage = i;
+            renderGallery();
+            window.scrollTo({ top: document.querySelector(".section-title").offsetTop - 100, behavior: "smooth" });
+          };
+          pagination.appendChild(btn);
+        }
+
+        // Next Button
+        const nextBtn = document.createElement("button");
+        nextBtn.className = "page-btn prev-next";
+        nextBtn.innerHTML = `Next <i class="fas fa-chevron-right ms-1"></i>`;
+        nextBtn.disabled = currentPage === totalPages;
+        nextBtn.onclick = () => {
+          if (currentPage < totalPages) {
+            currentPage++;
+            renderGallery();
+            window.scrollTo({ top: document.querySelector(".section-title").offsetTop - 100, behavior: "smooth" });
+          }
+        };
+        pagination.appendChild(nextBtn);
       }
 
-      function showImage(title, desc, img) {
-        document.getElementById("modalTitle").textContent = title;
-        document.getElementById("modalDesc").textContent = desc;
-        document.getElementById("modalImage").src = img;
-        new bootstrap.Modal(document.getElementById("imageModal")).show();
+      // ====================== SHOW IMAGE MODAL ======================
+      function showImage(element) {
+        const img = element.querySelector("img");
+        const modalImage = document.getElementById("modalImage");
+        const modalTitle = document.getElementById("modalTitle");
+        const modalDescription = document.getElementById("modalDescription");
+
+        if (img && modalImage) {
+          const title = element.getAttribute("data-title") || img.alt || "Event image";
+          const description = element.getAttribute("data-description") || "";
+
+          if (modalTitle) modalTitle.textContent = title;
+          if (modalDescription) modalDescription.textContent = description;
+
+          modalImage.src = img.src;
+          modalImage.alt = title;
+          new bootstrap.Modal(document.getElementById("imageModal")).show();
+        }
       }
 
-      function closeModal() {
-        bootstrap.Modal.getInstance(
-          document.getElementById("imageModal"),
-        ).hide();
-      }
-
-      // Initialize
-      window.onload = populateEvents;
+      // ====================== INITIALIZE ======================
+      document.addEventListener("DOMContentLoaded", () => {
+        renderGallery();
+      });
     </script>
 
     <!-- Bootstrap JS -->
